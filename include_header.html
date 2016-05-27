@@ -1,0 +1,27 @@
+<div id="skip-to-content"><a href="#content" accesskey="S" onclick="$('#content').focus(); return false;">Skip to Main Content</a></div>
+<div id="header">
+	<div id="title-name" role="banner"><a href="http://www.atlas-sys.com/"><img src="images/logo.gif" alt="Ares" title="Ares"/></a></div>
+	<div id="search" role="search">
+		<form action="ares.dll" name="Search" method="post">
+			<fieldset>
+				<legend class="offscreen">Search parameters</legend>
+				<input type="hidden" name="action" value="11"/>
+				<input type="hidden" name="form" value="52"/>
+				<input id="SessionID" name="SessionID" type="hidden" value="<#PARAM name="SessionID">" />
+				<label for="SearchCriteria">
+					<input id="Keyword" name="Keyword" title="Search term" type="text" class="f-criteria" />							
+				</label>
+				<input type="submit" name="SubmitButton" value="Search" class="f-submit" />		
+				<br/>
+				&nbsp;
+				<label for="KeywordTypeKeywordOnly">
+					<input type="radio" id="KeywordTypeKeywordOnly" name="KeywordType" Value="KeywordOnly" checked="checked"/> Keyword
+				</label>
+				&nbsp; &nbsp;
+				<label for="KeywordTypeTagOnly">			
+					<input type="radio" id="KeywordTypeTagOnly" name="KeywordType" Value="TagOnly" /> Tags
+				</label>
+			</fieldset>
+		</form>
+	</div>
+</div>

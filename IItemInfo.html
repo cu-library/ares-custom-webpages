@@ -1,0 +1,98 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en-US" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Ares - Item <#ITEM field="ItemID"/></title>
+<#INCLUDE filename="include_head.html" />
+<script>
+var sessionid = '<#PARAM name="SessionID"/>';
+</script>
+</head>
+<body id="type-b">
+<div id="wrap">
+
+	<#INCLUDE filename="include_header.html">	
+	
+
+	<div id="content-wrap">
+		<#INCLUDE filename="include_menu.html">	
+	
+		
+		
+		<div id="content" role="main" tabindex="-1">
+			<h1 class="offscreen">Item <#ITEM field="ItemID"/></h1>
+			<a href="<#ACTION action="10" form="60" valueType="Lookup" Value="CourseID">">Back to <#COURSE field="Name"></a>
+			<br/>
+
+
+			<div class="instructor">
+				<div class="header">Reserve Item</div>
+				<span style="float: left; margin: 10px 10px 2px 5px; width: 20px; height: 100px"><#ITEM field="Icon"></span>
+				<div class="row"><#INCLUDE filename="include_vieweditdelete.html"></div>						
+				<div class="row"><#ITEM field="CurrentStatus"/> <#ITEM field="ReasonForCancellation" headerText=" : "/></div>
+				<div class="row"><span style="font-weight: bold"><#ITEM field="Title"/></span><#ITEM field="ArticleTitle" headerText="<br/>"/><#ITEM field="Author" headerText="<br/>"/><#ITEM field="Description" headerText="<br/>"/><#ITEM field="WorldcatLink" linkText="<img src='images/worldcat.gif' height='16' width=16' alt='Worldcat Logo' title='Get more information from OCLC Open Worldcat'/> Get more information" headerText="<br/>"></div>
+
+				<div id="tags" style="margin: 5px;">
+					<form action="ares.dll" method="post" name="ItemTags" class="f-wrap-request">
+				                <input type="hidden" name="SessionID" value="<#PARAM name="SessionID">">
+						<input type="hidden" name="ItemID" value="<#ITEM field="ItemID"/>">
+				                <input type="hidden" name="Action" value="11"/>
+				                <input type="hidden" name="Type" value="450"/>
+						<label for="ItemTags">
+			                		<#ERROR name="ItemTags">
+			                		<strong>Instructor Tags
+							<br/><span class="note">Comma separated list of tags to be assigned to this Item<span>
+							</strong>
+			                		<textarea id="ItemTags" name="ItemTags" rows="4"><#ITEM field="Tags" TagType="Instructor"/></textarea><br />
+			                	</label>
+						<input type="submit" value="ModifyTags">
+
+					</form>
+					
+					<form action="ares.dll" method="post" name="ItemTags" class="f-wrap-request">
+				                <input type="hidden" name="SessionID" value="<#PARAM name="SessionID">">
+						<input type="hidden" name="ItemID" value="<#ITEM field="ItemID"/>">
+				                <input type="hidden" name="Action" value="11"/>
+				                <input type="hidden" name="PersonalOverride" value="Yes"/>
+				                <input type="hidden" name="Type" value="450"/>
+						<label for="ItemTagsPersonal">
+			                		<#ERROR name="ItemTags">
+			                		<strong>Personal Tags
+							<br/><span class="note">Comma separated list of tags to be assigned to this Item<span>
+							</strong>
+			                		<textarea id="ItemTagsPersonal" name="ItemTags" rows="4"><#ITEM field="Tags" TagType="Personal" /></textarea><br />
+			                	</label>
+						<input type="submit" value="ModifyTags">
+
+					</form>
+
+				</div>
+				<div class="row"><div style="margin-left: 25px"><#ITEM field="ItemText"></div></div>
+			</div>									
+
+			<div class="instructor-table-nohover" style="float: left;">
+
+			<#ITEM field="PermanentLink" includefile="include_permanentlink.html">	
+
+			<#TABLE class="instructor-table-nohover" name="ItemNotes" headerText="Notes" noDataAction="ShowMessage" noDataMessage="No Notes" column="Note" column="AddedBy" column="NoteDate" column="NoteType" ExcludeNoteTypes="Staff,Copyright">
+			<#TABLE class="instructor-table-nohover" name="ItemTracking" headerText="Tracking" noDataAction="ShowMessage" noDataMessage="No Tacking information" column="TrackingDateTime:Date" column="Status:Status">
+			<!--
+			<#TABLE class="instructor-table-nohover" name="ItemHistory" headerText="History" noDataAction="ShowMessage" noDataMessage="No History Information" column="DateTime:Date" column="Entry:Entry">
+			<#TABLE class="instructor-table-nohover" name="ViewNotifications" EmailType="Item" headerText="Notifications" noDataAction="ShowMessage" noDataMessage="No Notifications">
+			-->
+			</div>
+			<br/>
+
+			<div id="footer" role="contentinfo">
+			<p><#COPYRIGHT></p>
+			<#INCLUDE filename="include_footer.html">
+			</div>
+			
+		</div>
+		
+	
+	</div>
+	
+</div>
+</body>
+</html>

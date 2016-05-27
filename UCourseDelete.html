@@ -1,0 +1,39 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en-US" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Ares - Course Deletion</title>
+<#INCLUDE filename="include_head.html">
+<script>
+var sessionid = '<#PARAM name="SessionID"/>';
+</script>
+</head>
+<body id="type-b">
+<div id="wrap"> <#INCLUDE filename="include_header.html">
+    <div id="content-wrap"> <#INCLUDE filename="include_studentcoursemenu.html">
+        <div id="content" role="main" tabindex="-1"> 
+		<h1>Are you sure you want to remove this course?</h1>
+		<span class="note">By removing this course you will no longer have access to this course or reserve items in this course.<span class="<#CONDITIONAL Test='UseHotList' Type='CustomizationKey' False='hidden'>"> Any items in your <#CUSTOMIZATION name='HotListName'> that are associated with this course will also be removed from your <#CUSTOMIZATION name='HotListName'>.</span></span>
+			<br/><a href="<#ACTION action="22" type="11">&CourseID=<#COURSE field="CourseID">"><span style="font-size: 1.4em;">Yes</span></a>&nbsp;&nbsp;<a href="<#ACTION action="10" form="63" ValueType="Lookup" Value="CourseID">"><span  style="font-size: 1.4em;">No</span></a> 
+			<br/>
+			<p>
+			<div class="student" style="float:none">
+				<div class="header">Course Details</div>
+				<div class="row"><#COURSE field="CourseNumber"/>&nbsp;<#COURSE field="Name"/>(<#COURSE field="CourseCode"/>)</div>
+				<div class="row"><#TABLE class="xlist-table" name="CourseCrossList" HideColumnHeaders="True" column="CourseNumber" headerText="This course is also cross-listed as the following:" NoDataAction="ShowNothing"/></div>
+				<div class="row"><#COURSE field="Semester"/></div>
+				<div class="row"><#COURSE field="URL"/></div>	
+				<div class="row"><#COURSE field="Instructor"/></div>
+				<div class="row"><#COURSE field="Description"/></div>
+            </div>
+			</p>
+			<p>
+          <#TABLE class="student-table filterTable" name="Item" type="CourseItems" headerText="Reserve Items" LinkType="ItemEdit" LinkColumn="BothTitles" column="BothTitles:Title" column="Author:Author" column="ActiveDate:Active" NoDataAction="ShowMessage" NoDataMessage="There are no items in this course.">
+		  </p>
+            <div id="footer" role="contentinfo">
+              <p><#COPYRIGHT></p>
+              <#INCLUDE filename="include_footer.html"> </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

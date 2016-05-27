@@ -1,0 +1,35 @@
+<div id="utility" role="navigation">
+	<h2 class="offscreen" accesskey="n">Navigation Menu</h2>
+	<ul id="nav-secondary">
+		<li class="active"><a href="<#ACTION action="99">">Logoff <#PARAM name="Username"></a></li>
+		<#SWITCHMODE headerText="<li class='active'>" footerText="</li>">
+		<li class="active"><a href="<#ACTION action="10" form="10">">Main Menu</a></li>
+		<li class="active"><span class="nav-section" tabindex="0">Instructor Shared List Tools</span>
+			<ul>
+				<li class="first"><a href="<#ACTION action="10" form="40" ValueType="Lookup" Value="ListID">">Shared List Home</a></li>
+				<li><a href="<#ACTION action="20" type="15" ValueType="Lookup" Value="ListID">">Edit Shared List</a></li>
+				<li><a id="delete-shared-list" href="<#ACTION action="22" type="15" ValueType="Lookup" Value="ListID">">Delete Shared List</a></li>
+				<script type="text/javascript">
+					$(document).ready(function() {
+						$('#delete-shared-list').bind('click', function()
+						{
+							return confirm('Are you sure you want to delete this shared list?');
+						});
+					})
+				</script>
+				<li><a href="<#ACTION action="10" form="2" value="ISLRFMenu">&SharedListID=<#SHAREDLIST field="ListID">">Add Shared List Reserve Items</a></li>
+			</ul>
+		</li>
+		<#INCLUDE filename="include_instructormenu.html" restriction="UserType:Instructor">
+		<#INCLUDE filename="include_studentmenu.html" restriction="UserType:Student">
+		<#INCLUDE filename="include_sharedlistmenu.html" restriction="UserType:Instructor">
+		<#INCLUDE filename="include_sharedlistmenu.html" restriction="UserType:FullProxy">
+		<li class="active"><span class="nav-section" tabindex="0">Ares Tools</span>
+			<ul>
+				<li class="first"><a href="<#ACTION action="20" form="81">">Change User Information</a></li>
+				<#INCLUDE Filename="include_changepasswordoption.html" AresAuth="True">
+				<li class="last"><a href="<#ACTION action="10" form="73">">My Emails</a></li>
+			</ul>
+		</li>
+	</ul>
+</div>

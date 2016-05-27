@@ -1,0 +1,7 @@
+<div class="header">Course Details</div>
+<div class="row"><span style="font-weight: bold; font-size: 1.2em;"><#COURSE field="CourseNumber"/><#COURSE field="CourseCode" headerText="&nbsp;(" footerText=")"/></span>&nbsp;<span style="font-size: 1.2em;"><#COURSE field="Name"/></span></div>
+<div class="row"><#TABLE class="xlist-table" name="CourseCrossList" HideColumnHeaders="True" column="CourseNumber" headerText="This course is also cross-listed as the following:" NoDataAction="ShowNothing"/></div>
+<div class="row"><#COURSE field="Semester"/></div>
+<div class="row"><#CONDITIONAL Type="NotEmpty" Test="<#COURSE field='URL'>" True="<a href='<#COURSE field='URL'>'><#COURSE field='URL'></a>"></div>	
+<div class="row"><#COURSE field="Instructor"/></div>
+<div class="row"><#COURSE field="Description"/></div>

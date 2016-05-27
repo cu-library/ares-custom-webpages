@@ -1,0 +1,38 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en-US" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Ares - Course Search Results</title>
+<#INCLUDE filename="include_head.html">
+<script>
+var sessionid = '<#PARAM Name="SessionID">';
+</script>
+</head>
+<body id="type-b">
+<div id="wrap">
+
+	<#INCLUDE filename="include_header.html">	
+	
+	<div id="content-wrap">
+		<#INCLUDE filename="include_menu.html">	
+	
+		
+		<div id="content" role="main" tabindex="-1">
+		<h1>Course Search Results</h1>
+			<span style="background-color:#E6F4FF ;font-size: 110%" tabindex="0"><#STATUS class="fade"></span>	
+
+			<#TABLE name="Course" type="AddCourse" class="student-table-nohover filterTable" addCourseText="<img src='images/add_16.gif'/> Add Course" previouslyAddedText="Previously Added" id="SearchResults"  headerText="Courses" Session="Current" Role="Student" column="CourseNumber:Course" column="CourseCode:Course Code" column="Name:Name" column="Instructor:Instructor" column="ItemCount:Reserve Items" NoDataAction="ShowMessage" NoDataMessage="No courses were found with that criteria.<br/>To add courses to your account, <a href='<#Action action=10 form=63>'>Search Courses</a>" footerText="<a href='<#Action action=10 form=63>'>Search Again?</a>">		
+            
+            <div id="footer" role="contentinfo">
+			    <p>
+                    <#COPYRIGHT>
+                </p>
+			    <#INCLUDE filename="include_footer.html">
+			</div>
+			
+	  </div>
+
+	</div>
+	
+</div>
+</body>
+</html>

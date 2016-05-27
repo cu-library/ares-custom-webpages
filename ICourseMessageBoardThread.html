@@ -1,0 +1,41 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en-US" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Ares - <#COURSE field="CourseNumber"/> Message Board</title>
+<#INCLUDE filename="include_head.html">
+<script>
+var sessionid = '<#PARAM name="SessionID"/>';
+</script>
+</head>
+<body id="type-b">
+<div id="wrap">
+
+	<#INCLUDE filename="include_header.html">	
+	
+
+	<div id="content-wrap">
+		<#INCLUDE filename="include_instructorcoursemenu.html" restriction="Usertype:CourseInstructor">
+		<#INCLUDE filename="include_instructorcoursemenu.html" restriction="Usertype:CourseFullProxy">
+		<#INCLUDE filename="include_courseproxycoursemenu.html" restriction="Usertype:CourseProxy">
+	
+			
+		<div id="content" role="main" tabindex="-1">
+			<a href="<#ACTION action="10" form="66" value="CourseID" valuetype="Lookup">">Back to <#COURSE field="CourseNumber"/> Messageboard</a>				
+			<h1>Message Board for <#COURSE field="CourseNumber"/></h1>
+			<span style="background-color:#E6F4FF ;font-size: 110%" tabindex="0"><#STATUS class="fade"></span>
+			<a href="<#ACTION action="10" form="67" value="CourseID" valuetype="lookup"/>">New Topic</a> <span aria-hidden="true">|</span> <a href="<#ACTION action="10" form="68" value="ThreadID" valuetype="lookup"/>">Post Reply</a>
+			<span style="padding-top: 5px"><#TABLE class="student-table-nohover" name="MessageBoardThread" headerText="Message Board" 	NoDataAction="ShowNothing"></span>
+
+			<div id="footer" role="contentinfo">
+			<p><#COPYRIGHT></p>
+			<#INCLUDE filename="include_footer.html">
+			</div>
+			
+		</div>
+		
+	
+	</div>
+	
+</div>
+</body>
+</html>

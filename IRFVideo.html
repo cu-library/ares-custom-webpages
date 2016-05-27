@@ -1,0 +1,168 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en-US" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title>Ares - Reserve Video</title>
+	<#INCLUDE filename="include_head.html">
+</head>
+<body id="type-b">
+	<div id="wrap"> <#INCLUDE filename="include_header.html">
+	  <div id="content-wrap">
+			<#INCLUDE filename="include_instructorcoursemenu.html">
+			<div id="content" role="main" tabindex="-1">
+				<form action="ares.dll" method="post" name="CreateItem" class="f-wrap-request">
+					<input type="hidden" name="Action" value="11"/>
+					<input type="hidden" name="CourseID" value="<#COURSE field="CourseID"/>"/>
+					<input type="hidden" name="CopyrightRequired" value="No" />
+					<input type="hidden" name="Type" value="10"/>
+					<input type="hidden" name="ItemType" value="MON"/>
+					<input type="hidden" name="format" value="Video"/>
+					<input type="hidden" name="SessionID" value="<#PARAM name="SessionID">">
+
+					<div class="req" tabindex="0"><strong>*</strong> Indicates required field</div>
+					<fieldset>
+						<h1 tabindex="0">Reserve Item: Video</h1>
+						<legend class="offscreen">Reserve Item: Video</legend>
+						<span style="background-color:#E6F4FF ;font-size: 110%" tabindex="0"><#STATUS class="fade"></span>
+
+						<label for="Title"> <#ERROR Name="ERRORTitle">
+							<strong>
+								<span class="req">*</span><span class="<#VALIDATION name="ERRORTitle">">Title</span><br />
+								<span class="note">Please do not abbreviate unless your citation is abbreviated</span>
+							</strong>
+                            <input name="Title" id="Title" type="text" size="20" class="f-name" value="<#PARAM name="title"/>"/><br />							
+						</label>
+
+						<label for="Author"><#ERROR Name="ERRORAuthor">
+							<strong>
+								<span class="req">*</span>
+								<span class="<#VALIDATION name="ERRORAuthor">">Author/Editors</span><br/>
+								<span class="note">(Last Name, First Name)</span>
+							</strong>
+							<input id="Author" name="Author" type="text" size="40" class="f-name" value="<#PARAM Name="author"/>"><br />
+						</label>
+
+						<label for="Publisher"><#ERROR Name="ERRORPublisher">
+							<strong>
+								<span class="<#VALIDATION name="ERRORPublisher">">Publisher</span>
+							</strong>
+							<input id="Publisher" name="Publisher" type="text" size="40" class="f-name" value="<#PARAM Name="publisher"/>"><br />
+						</label>
+
+						<label for="PubPlace"><#ERROR Name="ERRORPubPlace">
+							<strong>
+								<span class="<#VALIDATION name="ERRORPubPlace">">Place of Publication</span>
+							</strong>
+							<input id="PubPlace" name="PubPlace" type="text" size="40" class="f-name" value="<#PARAM Name="pubplace"/>"><br />
+						</label>
+
+						<label for="PubDate"><#ERROR Name="ERRORPubDate">
+							<strong>
+								<span class="<#VALIDATION name="ERRORPubDate">">Date of Publication</span>
+							</strong>
+							<input id="PubDate" name="PubDate" type="text" size="40" class="f-name" value="<#PARAM Name="pubdate"/>"><br />
+						</label>
+
+						<label for="Edition"><#ERROR Name="ERROREdition">
+							<strong>
+								<span class="<#VALIDATION name="ERROREdition">">Edition</span>
+							</strong>
+							<input id="Edition" name="Edition" type="text" size="40" class="f-name"  value="<#PARAM Name="edition"/>"><br />
+						</label>
+
+
+						<label for="ISXN"><#ERROR Name="ERRORISXN">
+							<strong>
+								<span class="<#VALIDATION name="ERRORISXN">">ISBN (International Standard Book Number)</span><br />
+								<span class="note">If given will speed request processing</span>
+							</strong>
+							<input id="ISXN" name="ISXN" type="text" size="20" class="f-name" value="<#PARAM Name="ISXN"/>"><br />
+						</label>
+
+						<label for="CallNumber"><#ERROR name="ERRORCallNumber">
+							<strong>
+								<span class="<#VALIDATION name="ERRORCallNumber">">Call Number</span>
+							</strong>
+							<input id="CallNumber" name="CallNumber" type="text" size="20" class="f-name" value="<#PARAM Name="callnumber"/>"><br />
+						</label>
+
+						<label for="ESPNumber"><#ERROR name="ERRORESPNumber">
+							<strong>
+								<span class="<#VALIDATION name="ERRORESPNumber">">OCLC or Docline UI Number</span>
+							</strong>
+							<input id="ESPNumber" name="ESPNumber" type="text" size="20" class="f-name" value="<#PARAM Name="ESPNumber"/>"><br />
+						</label>
+
+						<label for="Notes"><#ERROR name="ERRORNotes">
+							<strong>
+								<span class="<#VALIDATION name="ERRORNotes">">Notes</span><br />
+								<span class="note">Put any information here that may help us find the item, as well as any other pertinent information.</span>
+							</strong>
+							<textarea id="Notes" name="ItemNote" rows="2" cols="40" class="f-name"><#PARAM Name="ItemNote"/></textarea>
+							<br />
+						</label>
+
+						<label for="ItemTags"><#ERROR name="ItemTags">
+							<strong>
+								<span class="<#VALIDATION name="ItemTags">">Tags</span><br />
+								<br/><span class="note">Comma separated list of tags to be assigned to this Item</span>
+							</strong>
+							<textarea id="ItemTags" name="ItemTags" rows="4"><#PARAM name="ItemTags"/></textarea><br />
+						</label>
+
+						<label for="SupplyMethod"><#ERROR name="ERRORSupplyMethod">
+							<strong>
+								<span class="<#VALIDATION name="ERRORSupplyMethod">" tabindex="0">How will this item be supplied?</span>
+							</strong>
+							<fieldset>
+								<legend class="offscreen">Supply method</legend>
+								<label for="File">
+									<input id="File" type="radio" <#PARAM Name="SELECTED" Identifier="SupplyMethod" Value="File"> name="SupplyMethod" value="File" class="f-radio" />
+									I will upload a file</label>
+
+								<label for="WillDeliver">
+									<input id="WillDeliver" type="radio" <#PARAM Name="SELECTED" Identifier="SupplyMethod" Value="WillDeliver"> name="SupplyMethod" value="WillDeliver" class="f-radio" />
+									I will bring the material to the library</label>
+
+								<label for="StaffSearch">
+									<input id="StaffSearch" type="radio" <#PARAM Name="SELECTED" Identifier="SupplyMethod" Value="StaffSearch"> name="SupplyMethod" value="StaffSearch" class="f-radio" />
+									Please have library staff pull the material off the shelves</label>
+
+								<label for="WebLink">
+									<input id="WebLink" type="radio" <#PARAM Name="SELECTED" Identifier="SupplyMethod" Value="WebLink"> name="SupplyMethod" value="WebLink" class="f-radio" />
+									The item should link to a website</label>
+							</fieldset>
+						</label>
+
+						<label for="URL"><#ERROR name="ERRORURL">
+							<strong>
+								<span class="<#VALIDATION name="ERRORURL">">If you chose the item should link to a website above, please enter the URL</span>
+							</strong>
+							<input id="URL" name="URL" type="text" size="40" class="f-name" value="<#PARAM name="URL">"><br />
+						</label>
+
+						<h2>Where did you learn about this item?</h2>
+
+						<label for="CitedIn"><#ERROR name="ERRORCitedIn">
+							<strong>
+								<span class="<#VALIDATION name="ERRORCitedIn">">Where did you find this item cited?</span><br />
+								<span class="note">Examples are Dissertation Abstracts, Dialog (specify which database), or a specific journal or book.</span>
+							</strong>
+							<input id="CitedIn" name="CitedIn" type="text" size="20" class="f-name" value="<#PARAM Name="citedin"/>"/><br />
+						</label>
+
+						<#TABLE class="instructor-table" name="CourseItemRestrictions" courseChoice="one" headerText="Reserve Restrictions" IncludeJavascriptCalendar="Yes" calendarText="<img src='images/cal.gif' alt='Open Calendar'/>"/>
+
+						<input class="f-submit" type="submit" name="SubmitButton" value="Submit Item" />
+						<input class="f-submit" type="reset" name="ClearButton" value="Clear" />
+
+					</fieldset>
+				</form>
+				<div id="footer" role="contentinfo">
+					<p><#COPYRIGHT></p>
+					<#INCLUDE filename="include_footer.html">
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

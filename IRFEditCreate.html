@@ -1,0 +1,116 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en-US" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title>Ares - Edit Item <#ITEM field="ItemID"/></title>
+	<#INCLUDE filename="include_head.html">
+	<script type="text/javascript" src="js/ckeditor/ckeditor.js"></script>
+
+	<script type="text/javascript">
+		function focusIframeOnTab(caller, tabTargetId, callEvent)
+		{
+			// If keypress TAB and not SHIFT+TAB
+
+			if(callEvent.keyCode == 9 && !callEvent.shiftKey)
+				document.getElementById(tabTargetId).contentWindow.focus();
+		}
+	</script>
+	
+	<script>
+		var sessionid = '<#PARAM Name="SessionID">';
+	</script>
+</head>
+<body id="type-b">
+	<div id="wrap"> 
+		<#INCLUDE filename="include_header.html"> 
+		<#INCLUDE filename="include_setItemFieldsAsReadOnly.html">  
+		<div id="content-wrap">
+			<#INCLUDE filename="include_instructorcoursemenu.html" restriction="Usertype:CourseInstructor">
+			<#INCLUDE filename="include_instructorcoursemenu.html" restriction="Usertype:CourseFullProxy">
+			<#INCLUDE filename="include_courseproxycoursemenu.html" restriction="Usertype:CourseProxy">
+			<div id="content" role="main" tabindex="-1">
+				<form action="ares.dll" method="post" name="CreateCourse" class="f-wrap-request">
+					<input type="hidden" name="Action" value="11">
+					<input type="hidden" name="Type" value="30">							
+					<input type="hidden" name="format" value="Create" />
+					<input type="hidden" name="ItemID" value="<#ITEM field="ItemID"/>" />				
+					<input type="hidden" name="SessionID" value="<#PARAM name="SessionID">">
+
+					<div class="req" tabindex="0"><strong>*</strong> Indicates required field</div>
+					
+					<fieldset>
+						<h1 tabindex="0">Edit Reserve Item: Free-text</h1>
+						<legend class="offscreen">Edit Reserve Item: Free-text</legend>
+						<span style="background-color:#E6F4FF ;font-size: 110%" tabindex="0"><#STATUS class="fade"></span>
+						<p tabindex="0">This item is currently at a status of: <span class="success"><#ITEM field="CurrentStatus"></span></p>
+						<#INCLUDE filename="include_viewdelete.html">
+						<h2 tabindex="0">Item Information</h2>
+						
+						<label for="Title">
+							<#ERROR name="ERRORTitle">
+							<strong>
+								<span class="req">*</span>
+								<span class="<#VALIDATION name="ERRORTitle">">Title</span>
+							</strong>
+							<input id="Title" name="Title" type="text" size="40" class="f-name" value="<#PARAM name="Title">"><br />
+						</label>
+                	
+						<label for="Author"><#ERROR name="ERRORAuthor">
+							<strong>
+								<span class="req">*</span>
+								<span class="<#VALIDATION name="ERRORAuthor">">Author</span><br/>
+								<span class="note">(Last Name, First Name)</span>
+							</strong>
+							<input id="Author" name="Author" type="text" size="40" class="f-name" value="<#PARAM name="Author">"  onKeyDown="focusIframeOnTab(this,'ItemText___Frame', event);if(!document.all) return false;"><br />
+						</label>
+
+						<label for="Notes"><#ERROR name="ERRORNotes">
+							<strong>
+								<span class="<#VALIDATION name="ERRORNotes">">Notes</span><br/>
+								<span class="note">Put any information here that may be pertinent to Reserves Staff.</span>
+							</strong>
+							<textarea id="Notes" name="ItemNote" rows="2" cols="40" class="f-name"><#PARAM Name="ItemNote"/></textarea><br /><br />
+
+							<#TABLE class="instructor-table-nohover" name="ItemNotes" headerText="Previous Notes" noDataAction="ShowNothing" noDataMessage="No Notes" column="Note" column="AddedBy" column="NoteDate" column="NoteType" ExcludeNoteTypes="Staff,Copyright">
+						</label>
+
+						<label for="ItemTags"><#ERROR name="ItemTags">
+							<strong>
+								<span class="<#VALIDATION name="ItemTags">">Tags</span><br/>
+								<span class="note">Comma separated list of tags to be assigned to this Item</span>
+							</strong>
+							<textarea id="ItemTags" name="ItemTags" rows="4"><#ITEM field="Tags" TagType="Instructor"/></textarea><br />
+						</label>
+
+						<label for="ItemText"><#ERROR name="ERRORItemContent">
+							<strong>
+								<span class="<#VALIDATION name="ItemText">" tabindex="0">Item Text</span><br />
+								<span class="note" tabindex="0">Edit the item's content in the free text area below.</span>
+							</strong>
+						</label>
+
+						<label>
+							<textarea id="ItemText" name="ItemText" rows="15" cols="80"><#PARAM name="ItemText"></textarea><br />
+							<script>
+								CKEDITOR.replace( 'ItemText' );
+							</script>							
+						</label>
+					
+						<#TABLE class="instructor-table-nohover" name="CourseItemRestrictions" headerText="Reserve Restrictions" IncludeJavascriptCalendar="Yes" courseChoice="one" calendarText="<img src='images/cal.gif' alt='OpenCalendar'/>"/>
+
+						<input type="hidden" name="CopyrightRequired" value="<#PARAM name="CopyrightRequired"/>">
+						<!-- The Ares.dll will always set CopyrightObtained to true for free-text documents -->
+
+						<input class="f-submit" type="submit" name="SubmitButton" value="Submit Item" />
+						<input class="f-submit" type="reset" name="ClearButton" value="Clear" />
+
+					</fieldset>
+				</form>			
+				<div id="footer" role="contentinfo">
+					<p><#COPYRIGHT></p>
+					<#INCLUDE filename="include_footer.html">
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

@@ -1,0 +1,34 @@
+<div id="utility" role="navigation">
+	<h2 class="offscreen" accesskey="n">Navigation Menu</h2>
+	<ul id="nav-secondary">
+		<li class="active"><a href="<#ACTION action="99">">Logoff <#PARAM name="Username"></a></li>
+		<#SWITCHMODE headerText="<li class='active'>" footerText="</li>">
+		<li class="active"><a href="<#ACTION action="10" form="10">">Main Menu</a></li>
+		<li class="active"><span class="nav-section" tabindex="0">Instructor Course Tools</span>
+			<ul>
+				<li class="first"><a href="<#ACTION action="10" form="60" ValueType="Lookup" Value="CourseID">">Course Home</a></li>
+				<li><a href="<#ACTION action="20" type="11" ValueType="Lookup" Value="CourseID">">Edit Course</a></li>
+				<li><a href="<#ACTION action="10" form="122" value="CourseID" valuetype="Lookup">">Cross Listings</a></li>
+				<li><a href="<#ACTION action="10" form="114" value="CourseID" valuetype="Lookup">">Clone Course</a></li>
+				<li><a href="<#ACTION action="10" form="112" value="CourseID" valuetype="Lookup">">Course Proxy Users</a></li>
+				<li><a href="<#ACTION action="10" form="113" value="CourseID" valuetype="Lookup">">Authorized Users</a></li>
+				<li><a href="<#ACTION action="10" form="2" value="IRFMenu">&CourseID=<#COURSE field="CourseID">">Add Reserve Items</a></li>
+				<li><a href="<#ACTION action="10" form="66" value="CourseID" valuetype="Lookup">">Messageboard</a></li>
+				<li><a href="<#ACTION action="10" form="115" value="CourseID" valuetype="Lookup">">Reserve Item Usage</a></li>
+				<li><a href="<#ACTION action="10" form="124" value="CourseID" valuetype="Lookup">">Enrolled Students</a></li>
+				<li class="last"><a href="<#ACTION action="10" form="123" value="CourseID" valuetype="Lookup">">Export Course Info</a></li>
+			</ul>
+		</li>
+		<#INCLUDE filename="include_instructormenu.html" restriction="UserType:Instructor">
+		<#INCLUDE filename="include_studentmenu.html" restriction="UserType:Student">
+		<#INCLUDE filename="include_sharedlistmenu.html" restriction="UserType:Instructor">
+		<#INCLUDE filename="include_sharedlistmenu.html" restriction="UserType:FullProxy">
+		<li class="active"><span class="nav-section" tabindex="0">Ares Tools</span>
+			<ul>
+				<li class="first"><a href="<#ACTION action="20" form="81">">Change User Information</a></li>
+				<#INCLUDE Filename="include_changepasswordoption.html" AresAuth="True">
+				<li class="last"><a href="<#ACTION action="10" form="73">">My Emails</a></li>
+			</ul>
+		</li>
+	</ul>
+</div>

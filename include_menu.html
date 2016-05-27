@@ -1,0 +1,20 @@
+<div id="utility" role="navigation">
+	<h2 class="offscreen" accesskey="n">Navigation Menu</h2>
+	<ul id="nav-secondary">
+		<li class="active"><#ACTION action="99" linkType="URL" linkText="Logoff <#PARAM name='Username'>"></li>
+		<#SWITCHMODE headerText="<li class='active'>" footerText="</li>">
+		<li class="active"><#ACTION action="10" form="10" linkType="URL" linkText="Main Menu"></li>
+		<#INCLUDE filename="include_instructormenu.html" restriction="UserType:Instructor">
+		<#INCLUDE filename="include_fullproxymenu.html" restriction="UserType:FullProxy">
+		<#INCLUDE filename="include_studentmenu.html" restriction="UserType:Student">
+		<#INCLUDE filename="include_sharedlistmenu.html" restriction="UserType:Instructor">
+		<#INCLUDE filename="include_sharedlistmenu.html" restriction="UserType:FullProxy">
+		<li class="active"><a href="#">Ares Tools</a>
+			<ul>
+				<li class="first"><a href="<#ACTION action="10" form="81">">Change User Information</a></li>
+				<#INCLUDE Filename="include_changepasswordoption.html" restriction="AresAuth=True">
+				<li class="last"><a href="<#ACTION action="10" form="73">">My Emails</a></li>
+			</ul>
+		</li>
+	</ul>
+</div>

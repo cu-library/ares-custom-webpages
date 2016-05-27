@@ -1,0 +1,43 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en-US" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Ares - Main Menu</title>
+<#INCLUDE filename="include_head.html">
+<script>
+var sessionid = '<#PARAM Name="SessionID">';
+</script>
+</head>
+<body id="type-c">
+<div id="wrap">
+
+	<#INCLUDE filename="include_header.html">	
+	
+
+	<div id="content-wrap">
+		<#INCLUDE filename="include_menu.html">	
+	
+		
+		<div id="content" role="main" tabindex="-1">
+			<h1>Main Menu</h1>
+			<span style="background-color:#E6F4FF; font-size: 110%"><#STATUS class="fade"></span>
+			<#TABLE name="Course" class="instructor-table filterTable" headerText="Current Courses" LinkColumn="CourseNumber" Session="Current" Role="Instructor" column="CourseNumber:Course" column="CourseCode:Course Code" column="Name:Name" column="ReserveItems:Reserve Items" footerText="<a href='<#Action action=10 form=2 value=IActiveCourseList>'>Also view upcoming courses</a>" NoDataAction="ShowMessage" NoDataMessage="No courses found.">			
+            <br/>
+			<#TABLE class="instructor-table filterTable" name="Item" headerText="Awaiting Supply By Instructor" ShowHiddenItems="True" LinkType="ItemEdit" LinkColumn="BothTitlesIcon" column="BothTitlesIcon:Title" column="Author:Author" column="Department:Department" column="CourseNumber:Course" ItemStatus="Awaiting Supply By Instructor" NoDataAction="ShowNothing">		
+
+
+			<div id="footer" role="contentinfo">
+			<p><#COPYRIGHT></p>
+			<#INCLUDE filename="include_footer.html">
+			</div>
+			
+		</div>
+		
+		<div id="sidebar">
+			<span id="alertsgroup"><#ALERTS NoDataAction="showMessage" AllowAjax="Yes"></span>
+		</div>		
+	
+	</div>
+	
+</div>
+</body>
+</html>

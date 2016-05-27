@@ -1,0 +1,25 @@
+<div id="utility" role="navigation">
+	<h2 class="offscreen" accesskey="n">Navigation Menu</h2>
+	<ul id="nav-secondary">
+		<li class="active"><a href="<#ACTION action="99">">Logoff <#PARAM name="Username"></a></li>
+		<#SWITCHMODE headerText="<li class='active'>" footerText="</li>">
+		<li class="active"><a href="<#ACTION action="10" form="10">">Main Menu</a></li>
+		<li class="active"><span class="nav-section" tabindex="0">Student Course Tools</span>
+			<ul>
+				<li class="first"><a href="<#ACTION action="10" form="60" ValueType="Lookup" Value="CourseID">">Course Home</a></li>
+				<li><#RSS name="CourseItems" type="URL" Displaytext="<span class='button-style'>XML</span> &nbsp;RSS Feed" ValueType="Lookup" Value="CourseID"></li>
+				<li><a href="<#ACTION action="10" form="66" value="CourseID" valuetype="Lookup">">Messageboard</a></li>
+				<li class="last"><a href="<#ACTION action="10" form="64" ValueType="Lookup" Value="CourseID">">Remove Course</a></li>
+			</ul>
+		</li>
+		<#INCLUDE filename="include_instructormenu.html" restriction="UserType:Instructor">
+		<#INCLUDE filename="include_studentmenu.html" restriction="UserType:Student">
+		<li class="active"><span class="nav-section" tabindex="0">Ares Tools</span>
+			<ul>
+				<li class="first"><a href="<#ACTION action="20" form="81">">Change User Information</a></li>
+				<#INCLUDE Filename="include_changepasswordoption.html" AresAuth="True">
+				<li class="last"><a href="<#ACTION action="10" form="73">">My Emails</a></li>
+			</ul>
+		</li>
+	</ul>
+</div>

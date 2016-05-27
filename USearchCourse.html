@@ -1,0 +1,79 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en-US" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Ares - Course Search</title>
+<#INCLUDE filename="include_head.html">
+<script>
+var sessionid = '<#PARAM Name="SessionID">';
+</script>
+</head>
+<body id="type-b">
+<div id="wrap">
+
+	<#INCLUDE filename="include_header.html">	
+	
+	<div id="content-wrap">
+		<#INCLUDE filename="include_menu.html">	
+	
+		
+		<div id="content" role="main" tabindex="-1">
+			<h1 class="offscreen">Course Search</h1>
+			<span style="background-color:#E6F4FF ;font-size: 110%" tabindex="0"><#STATUS class="fade"></span>
+			
+			<div class="student">
+			<div class="header">Search by Department</div>
+			<div class="row">
+				<form name="CourseSearch" action="ares.dll" method="post">
+			      <input type="hidden" name="Action" value="11"/>
+	                  <input type="hidden" name="Form" value="63"/>							
+ 	                  <input type="hidden" name="SessionID" value="<#PARAM name="SessionID">"> 
+			      <#OPTION name="Custom" GroupName="Department" SelectedValue="<#USER field=Department>" Size="1">
+				<input type="submit" name="DepartmentSearch" value="Go"/></form>
+			</div>
+			</div>
+
+			<div class="student">
+			<div class="header">Search by Instructor</div>
+			<div class="row">
+				<form name="CourseSearch" action="ares.dll" method="post">
+				<input type="hidden" name="Action" value="11"/>
+            	<input type="hidden" name="Form" value="63"/>							
+                <input type="hidden" name="SessionID" value="<#PARAM name="SessionID">">
+				<#OPTION name="SearchInstructors" DefaultOptionText="Choose an Instructor &nbsp;"/>			
+				<input type="submit" name="InstructorSearch" value="Go"/></form>
+			</div>
+			</div>
+
+			<div class="student">
+			<div class="header">Search by Course</div>
+			<div class="row">
+				<form name="CourseSearch" action="ares.dll" method="post">
+				<input type="hidden" name="Action" value="11"/>
+      	            <input type="hidden" name="Form" value="63"/>							
+            		<input type="hidden" name="SessionID" value="<#PARAM name="SessionID">">
+
+				<select title="Course Field" name="CourseField"  style="width: 135px">
+					<option selected="selected">Course Number</option><option>Course Name</option>
+					<option>Course Code</option>
+				</select>
+				<select title="Search Condition" name="CourseType" style="width: 90px">
+					<option selected="selected">Starts with</option>
+					<option>Contains</option>
+				</select>
+				<input type="text" name="Course" title="Course search term" /><input type="submit" name="CourseSearch" value="Go"/></form>
+			</div>
+			</div>
+
+			            
+	<div id="footer" role="contentinfo">
+			<p><#COPYRIGHT></p>
+			<#INCLUDE filename="include_footer.html">
+			</div>
+			
+		</div>
+		
+	</div>
+	
+</div>
+</body>
+</html>

@@ -1,0 +1,132 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en-US" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title>Ares - Edit Course <#COURSE field="CourseNumber"/></title>
+	<#INCLUDE filename="include_head.html">
+	<script>
+		var sessionid = '<#PARAM Name="SessionID">';
+	</script>
+</head>
+<body id="type-b">
+	<div id="wrap">
+		<#INCLUDE filename="include_header.html">	
+		<div id="content-wrap">
+			<#INCLUDE filename="include_instructorcoursemenu.html" restriction="Usertype:CourseInstructor">
+			<#INCLUDE filename="include_instructorcoursemenu.html" restriction="Usertype:CourseFullProxy">
+			<#INCLUDE filename="include_courseproxycoursemenu.html" restriction="Usertype:CourseProxy">
+			<div id="content" role="main" tabindex="-1">
+				<form action="ares.dll" method="post" name="CourseEdit" class="f-wrap-request">
+					<input type="hidden" name="Action" value="11">
+					<input type="hidden" name="Type" value="31">
+					<input type="hidden" name="CourseID" value="<#Course field="CourseID">">
+					<input type="hidden" name="SessionID" value="<#PARAM name="SessionID">">
+					
+					<div class="req"><p tabindex="0"><strong>*</strong> Indicates required field</p></div>
+					
+					<fieldset>
+						<h1 tabindex="0">Edit Course: <#COURSE field="Name"></h1>
+						<legend class="offscreen">Edit Course: <#COURSE field="Name"></legend>
+						<span style="background-color:#E6F4FF ;font-size: 110%" tabindex="0"><#STATUS class="fade"></span>
+						<h2 tabindex="0">Course Information</h2>
+						
+						<label for="CourseName"><#ERROR name="ERRORCourseName">
+							<strong>
+								<span class="req">*</span>
+								<span class="<#VALIDATION name="ERRORCourseName">">Course Name</span>
+							</strong>
+							<input id="CourseName" name="CourseName" type="text" size="40" class="f-name" value="<#PARAM name="CourseName">"><br />
+						</label>
+
+						<!--
+						<label for="ExternalCourseId"><#ERROR name="ERRORExternalCourseId">
+							<strong>
+								<span class="<#VALIDATION name="ERRORExternalCourseId">">External Course ID</span>
+							</strong>
+							<input id="ExternalCourseId" name="ExternalCourseId" type="text" size="20" class="f-name" value="<#PARAM name="ExternalCourseID"/>"><br />
+						</label>
+						-->
+			
+						<label for="CourseNumber"><#ERROR name="ERRORCourseNumber">
+							<strong>
+								<span class="req">*</span>
+								<span class="<#VALIDATION name="ERRORCourseNumber">">Course Number</span><br/>
+								<span class="note">e.g. MAT-101</span>
+							</strong>
+							<input id="CourseNumber" name="CourseNumber" type="text" size="40" class="f-name" value="<#PARAM name="CourseNumber">"><br />
+						</label>
+						
+						<label for="CourseCode"><#ERROR name="ERRORCourseCode">
+							<strong>
+								<span class="<#VALIDATION name="ERRORCourseCode">">Course Code</span>
+							</strong>
+							<input id="CourseCode" name="CourseCode" type="text" size="40" class="f-name" value="<#PARAM name="CourseCode">"><br />
+						</label>
+						
+						<label for="Department"><#ERROR name="ERRORDepartment">
+							<strong>
+								<span class="req">*</span>
+								<span class="<#VALIDATION name="ERRORDepartment">">Department</span>
+							</strong>
+							<#OPTION name="Custom" GroupName="Department" SelectedValue="<#PARAM name=department>" Size="1"><br/>
+						</label>
+						<label for="Semester"><#ERROR name="ERRORCourseSemester">
+							<strong>
+								<span class="req">*</span>
+								<span class="<#VALIDATION name="ERRORCourseSemester">">Course Semester</span>
+							</strong>
+							<#OPTION name="Semester" SelectedValue="<#PARAM name=Semester>" class="f-name">
+							<br/>
+						</label>
+						
+						<label for="CourseURL"><#ERROR name="ERRORCourseURL">
+							<strong>
+								<span class="<#VALIDATION name="ERRORCourseURL">">Course URL</span>
+							</strong>
+							<input id="CourseURL" name="CourseURL" type="text" size="20" class="f-name" value="<#PARAM name="CourseURL">"/><br />
+						</label>
+
+						<label for="CourseEnrollment"><#ERROR name="ERRORCourseEnrollment">
+							<strong>
+								<span class="<#VALIDATION name="ERRORCourseEnrollment">">Course Enrollment</span>
+							</strong>
+							<input id="CourseEnrollment" name="CourseEnrollment" type="text" size="20" class="f-name" value="<#PARAM name="CourseEnrollment">"/><br />
+						</label>
+						
+						<label for="CourseDescription"><#ERROR name="ERRORCourseDescription">
+							<strong>
+								<span class="<#VALIDATION name="ERRORCourseDescription">">Course Description</span>
+							</strong>
+                            <input name="CourseDescription" id="CourseDescription" type="text" size="20" class="f-name" value="<#PARAM name="CourseDescription"/>"/><br />							
+						</label>
+
+						<label for="CourseInstructor"><#ERROR name="ERRORCourseInstructor">
+							<strong>
+								<span class="req">*</span>
+								<span class="<#VALIDATION name="ERRORCourseInstructor">">Course Instructor</span><br/>
+								<span class="note">(Last Name, First Name)</span>
+							</strong>
+							<input type="text" class="f-name" id="CourseInstructor" name="CourseInstructor" value="<#PARAM name="CourseInstructor">"/>
+						</label>
+						
+						 <label for="CoursePassword"><#ERROR name="ERRORCoursePassword">
+							<strong>
+								<span class="<#VALIDATION name="ERRORCoursePassword">">Course Password</span>
+							</strong>
+							<input type="text" id="CoursePassword" class="f-name" name="CoursePassword" value="<#PARAM name="CoursePassword">"/>
+						 </label> 	
+
+						<#OPTION name="PickupLocation" selectedValue="<#PARAM name="PickupLocation" />" headerText="<label for='PickupLocation'><strong><span class='<#VALIDATION name=ERRORPickupLocation>'>Default Pickup Location for Physical Items</span></strong>" footerText="<br /></label>">	  
+
+						<input class="f-submit" type="submit" name="SubmitButton" value="Modify Class" />
+			
+					</fieldset>	
+				</form>
+				<div id="footer" role="contentinfo">
+					<p><#COPYRIGHT></p>
+					<#INCLUDE filename="include_footer.html">
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

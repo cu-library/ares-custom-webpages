@@ -1,0 +1,47 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en-US" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Ares - Main Menu</title>
+<#INCLUDE filename="include_head.html">
+<script>
+var sessionid = '<#PARAM Name="SessionID">';
+</script>
+</head>
+<body id="type-c">
+<div id="wrap">
+
+	<#INCLUDE filename="include_header.html">	
+	
+	<div id="content-wrap">
+		<#INCLUDE filename="include_menu.html">	
+	
+		
+		<div id="content" role="main" tabindex="-1">
+			<h1>Main Menu</h1>
+			<span style="background-color:#E6F4FF ;font-size: 110%" tabindex="0"><#STATUS class="fade"></span>
+			<form name="UserHome" method="post" action="ares.dll">
+			<input type="hidden" name="action" value="20" />
+ 			<input type="hidden" name="SessionID" value="<#PARAM name="SessionID"/>"/>			
+			
+			<#TABLE name="Item" class="student-table filterTable" headerText="My <#CUSTOMIZATION name='HotListName'>" LinkType="ItemInformation" LinkColumn="BothTitlesIcon" column="BothTitlesIcon:Title" column="Author:Author" column="Department:Department" column="CourseNumber:Course" HotList="Yes" hotListAdd="False" hotListAddText="Add checked items to <#CUSTOMIZATION name='HotListName'>" hotListDelete="True" hotListDeleteText="Remove checked items from <#CUSTOMIZATION name='HotListName'>" ONLYHotListItems="Yes" NoDataAction="ShowNothing">		
+
+			<#TABLE name="Course" id="SearchResults" class="student-table filterTable" headerText="My Courses" LinkColumn="CourseNumber" Session="Current" Role="Student" column="CourseNumber:Course" column="CourseCode:Course Code" column="Name:Name" column="ItemCount:Reserve Items" NoDataAction="ShowMessage" NoDataMessage="You currently are not registered for any courses in the Ares system.<br/>To add courses to your account, <a href='<#Action action=10 form=63>'>Search Courses</a>">
+
+		    	<#TAGCLOUD name="Course" MaxFontSizes="5" IncludeTagCount="Yes" TagFence="No" TagType="Personal" headerText="<h2>My Tags</h2>" footerText="<br />" /><br/>
+			</form>
+			<div id="footer" role="contentinfo">
+			<p><#COPYRIGHT></p>
+			<#INCLUDE filename="include_footer.html">
+			</div>
+			
+		</div>
+		
+		<div id="sidebar">
+			<span id="alertsgroup"><#ALERTS NoDataAction="showMessage" AllowAjax="Yes"></span>
+		</div>		
+	
+	</div>
+	
+</div>
+</body>
+</html>

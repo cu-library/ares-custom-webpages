@@ -1,0 +1,92 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en-US" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title>Ares - Cross Listings for Course <#COURSE field="CourseNumber"/></title>
+	<#INCLUDE filename="include_head.html">
+	<script>
+		var sessionid = '<#PARAM Name="SessionID">';
+	</script>
+</head>
+<body id="type-b">
+	<div id="wrap">
+		<#INCLUDE filename="include_header.html">	
+		<div id="content-wrap">
+			<#INCLUDE filename="include_instructorcoursemenu.html" restriction="Usertype:CourseInstructor">
+			<#INCLUDE filename="include_instructorcoursemenu.html" restriction="Usertype:CourseFullProxy">
+			<#INCLUDE filename="include_courseproxycoursemenu.html" restriction="Usertype:CourseProxy">
+			<div id="content" role="main" tabindex="-1">
+				<h1>Cross Listings for Course <#COURSE field="CourseNumber"/></h1>
+
+				<p>If this course is cross listed, you may add the additional departments and course numbers below. This will enable students
+				to find this course using the alternative departments and course-numbers.</p>	
+
+	            <div class="instructor">
+					<div class="header">Course Details</div>
+					<div class="row"><span style="font-weight: bold; font-size: 1.2em;"><#COURSE field="CourseNumber"/></span>&nbsp;<span style="font-size: 1.2em;"><#COURSE field="Name"/>(<#COURSE field="CourseCode"/>)</span></div>
+					<div class="row"><#COURSE field="Semester"/></div>
+				</div>
+
+				<#TABLE class="xlist-table" name="CourseCrossList" column="RemoveCrossList:Remove" column="Department:Department" column="CourseNumber:Course" column="Name:Name" column="CourseCode:Course Code" headerText="This course is also cross-listed as the following:" NoDataAction="ShowMessage" NoDataMessage="Currently this course is not cross-listed. You may add cross-listings using the form below." ShowParentCourseField="True"/>
+
+				<br/>
+				
+				<span style="background-color:#E6F4FF ;font-size: 110%" tabindex="0"><#STATUS class="fade"></span>
+				
+				<form method="post" action="ares.dll" class="f-wrap-request">
+					<input type="hidden" name="SessionID" value="<#PARAM name="SessionID"/>"/>
+					<input type="hidden" name="action" value="11"/>
+					<input type="hidden" name="type" value="122"/>
+					<input type="hidden" name="Form" value="<#PARAM name="Form">"/>
+					<input type="hidden" name="ValidationForm" value="CrossList"/>
+					<input type="hidden" name="CourseID" value="<#COURSE field="CourseID">"/>
+					
+					<div class="req" tabindex="0"><strong>*</strong> Indicates required field</div>
+					<fieldset>
+						<h2 tabindex="0">Add a cross-listing</h2>
+						<legend class="offscreen">Add a cross-listing</legend>
+
+						<label for="Department"><#ERROR name="ERRORDepartment">
+							<strong>
+								<span class="req">*</span>
+								<span class="<#VALIDATION Name="ERRORDepartment">">Cross Listed Department</span>
+							</strong>
+							<#OPTION name="Custom" GroupName="Department" SelectedValue="<#PARAM name=Department>" Size="1"><br/>
+						</label>
+					
+						<label for="CourseNumber"><#ERROR name="ERRORCourseNumber">
+							<strong>
+								<span class="req">*</span>
+								<span class="<#VALIDATION Name="ERRORCourseNumber">">Cross Listed Course Number</span><br />
+								<span class="note">e.g. MAT-101</span>
+							</strong>
+							<input id="CourseNumber" name="CourseNumber" type="text" size="40" class="f-name" value="<#PARAM name="CourseNumber">" /><br />
+						</label>
+
+						<label for="CourseName"><#ERROR name="ERRORCourseName">
+							<strong>
+								<span class="<#VALIDATION Name="ERRORCourseName">">Cross Listed Course Name</span>
+							</strong>
+							<input id="CourseName" name="CourseName" type="text" size="40" class="f-name" value="<#PARAM name="CourseName">" /><br />
+						</label>
+								
+						<label for="CourseCode"><#ERROR name="ERRORCourseCode">
+							<strong>
+								<span class="<#VALIDATION Name="ERRORCourseCode">">Cross Listed Course Code</span>
+							</strong>
+							<input id="CourseCode" name="CourseCode" type="text" size="40" class="f-name" value="<#PARAM name="CourseCode">" /><br />
+						</label>
+										
+					</fieldset>
+
+					<input class="f-submit" type="submit" name="SubmitButton" value="Add Cross Listed Course" />
+
+				</form>			
+				<div id="footer" role="contentinfo">
+					<p><#COPYRIGHT></p>
+					<#INCLUDE filename="include_footer.html">
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

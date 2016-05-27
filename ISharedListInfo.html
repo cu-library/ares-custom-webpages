@@ -1,0 +1,45 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en-US" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title>Ares - Shared List <#SHAREDLIST field="ListName"></title>
+	<#INCLUDE filename="include_head.html">
+	<script>
+		var sessionid = '<#PARAM name="SessionID"/>';
+		EnableSortPersistence("ItemTable");
+			
+		$(document).ready(function() {
+			$('.break-shared-list-link').bind('click', function()
+			{
+				return confirm('Are you sure you want to disassociate this course from this shared list? This will not remove any course items created from this shared list.');
+			});
+		});	
+	</script>
+</head>
+<body id="type-b">
+	<div id="wrap"> <#INCLUDE filename="include_header.html">
+		<div id="content-wrap">
+			<#INCLUDE filename="include_instructorsharedlistmenu.html" restriction="Usertype:SharedListInstructor">
+			<#INCLUDE filename="include_fullproxysharedlistmenu.html" restriction="Usertype:SharedListFullProxy">
+			<div id="content" role="main" tabindex="-1"> 
+			<h1 class="offscreen">Shared List <#SHAREDLIST field="ListName"></h1>
+			<span class="status-line"><#STATUS class="fade"></span>
+			
+			<div class="instructor">
+				<#INCLUDE filename="include_defaultsharedlistinfo.html"/>		
+				</div>
+
+				<#TABLE class="instructor-table filterTable" name="SharedListItem" id="SharedListItemTable" headerText="List Items" LinkType="ItemInfo" LinkColumn="BotTitlesIcon" column:"ListItemID:ID" column:"BothTitlesIcon:Title" column:"Author:Author" NoDataAction="ShowMessage" NoDataMessage="There are no items in this shared list." allowsort="true">
+
+				<h2>Courses associated with this shared list.</h2>
+
+				<#TABLE name="Course" type='SharedListCourses' class="instructor-table filterTable" headerText="Courses" LinkColumn="CourseNumber" Session="ItemAddition" Role="Instructor" column="CourseNumber:Course" column="CourseCode:Course Code" column="Name:Name" column="ReserveItems:Reserve Items" NoDataAction="ShowMessage" NoDataMessage="No courses found.">		
+
+				<div id="footer" role="contentinfo">
+				  <p><#COPYRIGHT></p>
+				  <#INCLUDE filename="include_footer.html"> 
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

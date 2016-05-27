@@ -1,0 +1,70 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en-US" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title>Ares - Logon</title>
+	<#INCLUDE filename="include_head.html">
+</head>
+<body id="type-d">
+	<span class="f-wrap-1">
+		<input type="hidden" name="Action" value="1" />
+	</strong>
+	<div id="wrap">
+		<#INCLUDE filename="include_header.html"> 
+			<div id="content-wrap">
+				<div id="content" role="main" tabindex="-1">
+					<span style="background-color:#FFE4E1 ;font-size: 110%" tabindex="0"><#STATUS class="fade"></span>
+					<form action="<#DLL>" method="post" class="f-wrap-1">
+						<input type="hidden" name="AresForm" value="Logon"/>
+						<div id="logonform">
+							<div class="req" tabindex="0"><strong>*</strong> Indicates required field</div>
+							
+							<fieldset>
+								<h1 tabindex="0">Ares Logon</h1>
+								<legend class="offscreen">Ares Logon</legend>
+			
+							<label for="username">
+								<strong>
+									<span class="req">*</span>
+									<span>Username:</span>
+								</strong>
+								<input id="username" name="username" type="text" class="f-name" /><br />
+							</label>
+			
+							<label for="password">
+								<strong>
+									<span class="req">*</span>Password:
+								</strong>
+								<input id="password" name="password" type="password" class="f-name" /><br />
+							</label>
+								
+							<div class="f-submit-wrap">
+								<input type="submit" name="SubmitButton" value="Logon to Ares" class="f-submit" /> 
+								
+								<span class="subdued" style="vertical-align:text-top"><a href="ares.dll?action=10&form=85">Forget your password?</a></span>
+							</div>
+			 		
+						</fieldset>
+					</div>
+				</form>
+
+				<div id="footer" role="contentinfo">
+					<p><#COPYRIGHT></p>
+					<#INCLUDE filename="include_footer.html">
+				</div>
+			</div>
+			
+			<div id="sidebar">
+				<div class="featurebox">
+					<h2>New to Ares?</h2>
+					<p>Signing up is easy. <a onclick="" href="ares.dll?action=10&form=80">Create Account</a> now.<br /></p>
+				</div>
+				
+				<div class="featurebox">
+					<h2>A Static Alert</h2>
+					<p>This is where you could post a static alert to display possible library closings. You may also use this section to possibly provide logon help or highlight new Library services.</p>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

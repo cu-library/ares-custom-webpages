@@ -1,0 +1,48 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en-US" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Ares - Reserve Item Usage</title>
+<#INCLUDE filename="include_head.html" />
+<script>
+var sessionid = '<#PARAM Name="SessionID">';
+</script>
+</head>
+<body id="type-b">
+<div id="wrap">
+
+	<#INCLUDE filename="include_header.html">	
+	
+
+	<div id="content-wrap">
+		<#INCLUDE filename="include_instructorcoursemenu.html">	
+	
+		
+		
+		<div id="content" role="main" tabindex="-1">
+		<h1>Detailed Reserve Usage</h1>
+		
+		<div class="instructor">
+		<div class="row"><span style="font-weight: bold"><#ITEM field="Title"/></span></div>
+			<div class="row"><#ITEM field="ArticleTitle"/></div>
+			<div class="row"><#ITEM field="Author"/></div>
+			<div class="row"><#ITEM field="Description"/></div>
+			<div class="row"><a href="<#ACTION action="10" form="115" valueType="Lookup" Value="CourseID">">Back to Course Usage</a></div>
+		</div>
+		
+		<#TABLE Name="ItemUsage" class="instructor-table-nohover" headerText="Detailed Reserve Usage" AllowSort="Yes" NoDataMessage="This item has not been viewed." NoDataAction="ShowMessage" AllowSort="True" orderBy="LastName,FirstName,UsageCount DESC">
+		<#TABLE Name="ItemNonUsage" class="instructor-table-nohover" headerText="Students who did not view this item" AllowSort="Yes" NoDataMessage="All Students viewed this item." NoDataAction="ShowMessage" AllowSort="True" orderBy="LastName,FirstName,UsageCount DESC">
+
+
+			<div id="footer" role="contentinfo">
+			<p><#COPYRIGHT></p>
+			<#INCLUDE filename="include_footer.html">
+			</div>
+			
+		</div>
+			
+	</div>
+	
+</div>
+</body>
+</html>

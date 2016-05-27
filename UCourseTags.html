@@ -1,0 +1,63 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en-US" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Ares - Course <#COURSE field="CourseNumber"/> Tags</title>
+<#INCLUDE filename="include_head.html">
+<script>
+var sessionid = '<#PARAM name="SessionID"/>';
+</script>
+</head>
+<body id="type-b">
+<div id="wrap">
+
+	<#INCLUDE filename="include_header.html">	
+	
+
+	<div id="content-wrap">
+		<#INCLUDE filename="include_studentcoursemenu.html">	
+	
+		
+		
+		<div id="content" role="main" tabindex="-1">
+		<h1 class="offscreen">Course <#COURSE field="CourseNumber"/> Tags</h1>
+			<span style="background-color:#E6F4FF ;font-size: 110%" tabindex="0"><#STATUS class="fade"></span>
+
+			<div class="instructor">
+				<div class="header">Course Details</div>
+				<div class="row"><#COURSE field="CourseNumber"/>&nbsp;<#COURSE field="Name"/><#COURSE field="CourseCode" headerText="&nbsp;(" footerText=")"/></div>
+				<div class="row"><#TABLE class="xlist-table" name="CourseCrossList" HideColumnHeaders="True" column="CourseNumber" headerText="This course is also cross-listed as the following:" NoDataAction="ShowNothing"/></div>
+				<div class="row"><#COURSE field="Semester"/></div>
+				<div class="row"><#CONDITIONAL Type="NotEmpty" Test="<#COURSE field='URL'>" True="<a href='<#COURSE field='URL'>'><#COURSE field='URL'></a>"></div>	
+				<div class="row"><#COURSE field="Instructor"/></div>
+				<div class="row"><#COURSE field="Description"/></div>
+				<div class="rowline"><span class="note">An Email subscription will send you emails when a new items becomes available in this course.</span>
+				<#SUBSCRIBE notSubscribedText="You currently are <span class='error'>not</span> subscribed." subscribedText="You are currently subscribed." subscribeLink="<span style='text-decoration:underline;'>Subscribe Now</span>" unsubscribeLink="<span style='text-decoration:underline;'>Please remove my subscription</span>"/></div>
+			</div>
+	
+		    	<#TAGCLOUD TagType="Course" MaxFontSizes="5" IncludeTagCount="Yes" TagFence="No" /><br/>
+
+			<br/>
+			<div>
+			Current Filter: <#PARAM name="Tag" /> | <a href="<#ACTION action="10" form="60" ValueType="Lookup" Value="CourseID">">View all Items for <#COURSE field="CourseNumber" /></a>	
+			<form name="UserHome" method="post" action="ares.dll">
+			<input type="hidden" name="action" value="20" />
+			<input type="hidden" name="CourseID" value="<#COURSE field="CourseID"/>" />
+ 			<input type="hidden" name="SessionID" value="<#PARAM name="SessionID"/>"/>
+			<#TABLE class="student-table filterTable" id="SearchResults" name="Item" type="courseitems" headerText="Reserve Items" LinkType="ItemView" IconDirect="True" LinkColumn="BothTitles" column="BothTitlesIcon:Title" column="Author:Author" column="InactiveDate:Available until" HotList="Yes" hotListAdd="True" hotListAddText="Add checked items to <#CUSTOMIZATION name='HotListName'>" hotListDelete="True" hotListDeleteText="Remove checked items from <#CUSTOMIZATION name='HotListName'>" column="UserViewed" UnreadItem="<img src='images/new.gif' alt='New Item'/>" ReadItem="<img src='images/itemviewed.gif' alt='PreviouslyViewed'/>"  column="Tags:Tags" NoDataAction="ShowMessage" NoDataMessage="There are no items in this course.">		
+			</form>
+			</div>
+
+
+			<div id="footer" role="contentinfo">
+			<p><#COPYRIGHT></p>
+			<#INCLUDE filename="include_footer.html">
+			</div>
+			
+		</div>
+		
+	
+	</div>
+	
+</div>
+</body>
+</html>
