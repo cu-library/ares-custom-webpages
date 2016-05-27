@@ -1,3 +1,7 @@
+body {
+    font-family: 'Open Sans',arial,verdana,sans-serif;
+}
+
 #header {
     border-top: 0px;
     border-bottom: 5px solid #b9212c;
