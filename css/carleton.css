@@ -5,7 +5,13 @@
 #skip-to-content a {
     border: thin solid lightgray;
     padding: 0.3rem 1rem;
-    background: #272727;
-    color: white;
+    background: white;
+    color: black;
     font-size: 1.1rem;
+    position: relative;
+    left: -10000px;
+}
+
+#skip-to-content a:active, #skip-to-content a:focus{
+   position: static;
 }
