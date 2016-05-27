@@ -1,11 +1,22 @@
+/* Typography */
+
 body {
     font-family: 'Open Sans',arial,verdana,sans-serif;
 }
+
+h1, h2, h3, h4, h5, h6, fieldset legend {
+    letter-spacing: normal;
+    font-family: 'Open Sans',arial,verdana,sans-serif;
+}
+
+/* Header */
 
 #header {
     border-top: 0px;
     border-bottom: 5px solid #b9212c;
 }
+
+/* Skip Link */
 
 #skip-to-content {
     height: 0px;
