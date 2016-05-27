@@ -1,5 +1,11 @@
 #header {
+    border-top: 0px;
     border-bottom: 5px solid #b9212c;
+}
+
+#skip-to-content {
+    height: 0px;
+    overflow: visible;
 }
 
 #skip-to-content a {
@@ -8,7 +14,7 @@
     background: white;
     color: black;
     font-size: 1.1rem;
-    position: relative;
+    position: absolute;
     left: -10000px;
 }
 
