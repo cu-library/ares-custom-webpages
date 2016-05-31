@@ -20,7 +20,7 @@ var sessionid = '<#PARAM Name="SessionID">';
 		<h1>Course Search Results</h1>
 			<span style="background-color:#E6F4FF ;font-size: 110%" tabindex="0"><#STATUS class="fade"></span>	
 
-			<#TABLE name="Course" type="AddCourse" class="student-table-nohover filterTable" addCourseText="<img src='images/add_16.gif'/> Add Course" previouslyAddedText="Previously Added" id="SearchResults"  headerText="Courses" Session="Current" Role="Student" column="CourseNumber:Course" column="CourseCode:Course Code" column="Name:Name" column="Instructor:Instructor" column="ItemCount:Reserve Items" NoDataAction="ShowMessage" NoDataMessage="No courses were found with that criteria.<br/>To add courses to your account, <a href='<#Action action=10 form=63>'>Search Courses</a>" footerText="<a href='<#Action action=10 form=63>'>Search Again?</a>">		
+			<#TABLE name="Course" type="AddCourse" class="student-table-nohover filterTable" addCourseText="<img src='images/add_16.gif'/> Add Course" previouslyAddedText="Previously Added" id="SearchResults"  headerText="Courses" Session="Current" Role="Student" column="CourseNumber:Course" column="CourseCode:Section" column="Name:Name" column="Instructor:Instructor" column="ItemCount:Reserve Items" NoDataAction="ShowMessage" NoDataMessage="No courses were found with that criteria.<br/>To add courses to your account, <a href='<#Action action=10 form=63>'>Search Courses</a>" footerText="<a href='<#Action action=10 form=63>'>Search Again?</a>">		
             
             <div id="footer" role="contentinfo">
 			    <p>

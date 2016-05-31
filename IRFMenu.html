@@ -65,7 +65,7 @@
 				<div style="clear: both;">
 					<h2>Or would you like to import from a current or previously taught course?</h2>
 
-					<#TABLE name="Course" class="instructor-table filterTable" Type="Import" headerText="Current and Previous Courses" LimitRecentMonths="2" Session="PreviousOrCurrent" Role="Instructor"  column="Semester:Semester" column="CourseNumber:Course" column="CourseCode:Course Code" column="Name:Name" column="ReserveItems:Reserve Items" NoDataAction="ShowMessage" NoDataMessage="No courses found." orderby="C.StopDate DESC,C.CourseNumber ASC">		
+					<#TABLE name="Course" class="instructor-table filterTable" Type="Import" headerText="Current and Previous Courses" LimitRecentMonths="2" Session="PreviousOrCurrent" Role="Instructor"  column="Semester:Semester" column="CourseNumber:Course" column="CourseCode:Section" column="Name:Name" column="ReserveItems:Reserve Items" NoDataAction="ShowMessage" NoDataMessage="No courses found." orderby="C.StopDate DESC,C.CourseNumber ASC">		
 					
 					<h2>Or would you like to apply a shared list to this course?</h2>
 					
