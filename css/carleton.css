@@ -34,5 +34,13 @@ h1, h2, h3, h4, h5, h6, fieldset legend {
 }
 
 #skip-to-content a:active, #skip-to-content a:focus{
-   position: static;
+    position: static;
 }
+
+/* Sidebar */
+
+#faq-contents .faq-item-box p, .featurebox h1, .featurebox h2, .featurebox h3, .featurebox h4, .featurebox h5, .featurebox h6 {
+    border-bottom: none; 
+    color: black;
+}
+
