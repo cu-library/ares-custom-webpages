@@ -9,6 +9,19 @@ h1, h2, h3, h4, h5, h6, fieldset legend {
     font-family: 'Open Sans',arial,verdana,sans-serif;
 }
 
+/* Links */
+
+a {
+    color: #186d92;
+} 
+a:link, a:visited {
+    color: #186d92;
+} 
+a:hover,a:active,a:focus {
+    text-decoration: underline;
+    color: #186d92;
+}
+
 /* Header */
 
 #header {
