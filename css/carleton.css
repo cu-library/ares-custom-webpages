@@ -2,6 +2,7 @@
 
 body {
     font-family: 'Open Sans',arial,verdana,sans-serif;
+    color: black;
 }
 
 h1, h2, h3, h4, h5, h6, fieldset legend {
@@ -55,5 +56,16 @@ a:hover,a:active,a:focus {
 #faq-contents .faq-item-box p, .featurebox h1, .featurebox h2, .featurebox h3, .featurebox h4, .featurebox h5, .featurebox h6 {
     border-bottom: none; 
     color: black;
+}
+
+/* Footer */
+
+#footer {
+    font-size: inherit;
+    color: black;
+}
+
+#footer a, #footer a:link {
+    color: #186d92;
 }
 
