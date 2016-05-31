@@ -19,7 +19,8 @@ var sessionid = '<#PARAM Name="SessionID">';
 		
 		<div id="content" role="main" tabindex="-1">
 			<h1>Main Menu</h1>
-			<span style="background-color:#E6F4FF; font-size: 110%; border-bottom: 20px;"><#STATUS class="fade"></span>
+			<span style="background-color:#E6F4FF; font-size: 110%;"><#STATUS class="fade"></span>
+                        <br />
 
                         <#TABLE name="CourseValidation" class="instructor-table" AllowRowClick="Yes" headerText="Available Courses to Import from Registrar" column="AddCourse:" column ="ItemCheck" AllowJavascriptHover="False" column="CourseNumber:Course" column="CourseCode:Section" column="Name: Course Title"   column="Semester: Semester" Session="Current" Role="Instructor" NoDataAction="ShowMessage" NoDataMessage="No courses found.">
 
