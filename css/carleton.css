@@ -23,11 +23,23 @@ a:hover,a:active,a:focus {
     color: #186d92;
 }
 
+/* Backgrounds */
+
+body {
+    background: #E6E6E6;
+}
+
+#content-wrap {
+    color: white;
+}
+
+
 /* Header */
 
 #header {
     border-top: 0px;
     border-bottom: 5px solid #b9212c;
+    margin: 0px;
 }
 
 /* Search */
