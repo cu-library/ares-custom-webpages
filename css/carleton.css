@@ -58,6 +58,14 @@ a:hover,a:active,a:focus {
     color: black;
 }
 
+#nav-secondary {
+    border: none;
+}
+
+#sidebar {
+    border: none;
+}
+
 /* Footer */
 
 #footer {
