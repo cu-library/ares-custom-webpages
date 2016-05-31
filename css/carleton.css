@@ -30,6 +30,12 @@ a:hover,a:active,a:focus {
     border-bottom: 5px solid #b9212c;
 }
 
+/* Search */
+
+#search {
+    color: inherit;
+}
+
 /* Skip Link */
 
 #skip-to-content {
