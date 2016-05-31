@@ -32,6 +32,7 @@ body {
 
 #wrap {
     background: white;
+    min-height: 495px;
 }
 
 #content-wrap {
