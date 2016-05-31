@@ -24,7 +24,7 @@ var sessionid = '<#PARAM Name="SessionID">';
 
                         <#TABLE name="CourseValidation" class="instructor-table" AllowRowClick="Yes" headerText="Available Courses to Import from Registrar" column="AddCourse:" column ="ItemCheck" AllowJavascriptHover="False" column="CourseNumber:Course" column="CourseCode:Section" column="Name: Course Title"   column="Semester: Semester" Session="Current" Role="Instructor" NoDataAction="ShowMessage" NoDataMessage="No courses found.">
 
-			<#TABLE name="Course" class="instructor-table filterTable" headerText="Current Courses" LinkColumn="CourseNumber" Session="Current" Role="Instructor" column="CourseNumber:Course" column="CourseCode: Section" column="Name:Name" column="ReserveItems:Reserve Items" footerText="<a href='<#Action action=10 form=2 value=IActiveCourseList>'>Also view upcoming courses</a>" NoDataAction="ShowMessage" NoDataMessage="No courses found.">			
+			<#TABLE name="Course" class="instructor-table filterTable" headerText="Current Courses" LinkColumn="CourseNumber" Session="Current" Role="Instructor" column="CourseNumber:Course" column="CourseCode:Section" column="Name:Name" column="ReserveItems:Reserve Items" footerText="<a href='<#Action action=10 form=2 value=IActiveCourseList>'>Also view upcoming courses</a>" NoDataAction="ShowMessage" NoDataMessage="No courses found.">			
             <br/>
 			<#TABLE class="instructor-table filterTable" name="Item" headerText="Awaiting Supply By Instructor" ShowHiddenItems="True" LinkType="ItemEdit" LinkColumn="BothTitlesIcon" column="BothTitlesIcon:Title" column="Author:Author" column="Department:Department" column="CourseNumber:Course" ItemStatus="Awaiting Supply By Instructor" NoDataAction="ShowNothing">		
 
