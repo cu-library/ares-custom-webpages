@@ -138,7 +138,7 @@
 
 								<label for="StaffSearch">
 								<input id="StaffSearch" type="radio" <#PARAM Name="SELECTED" Identifier="SupplyMethod" Value="StaffSearch"> name="SupplyMethod" value="StaffSearch" class="f-radio" />
-								Please have library staff pull the material off the shelves</label>
+								<span id="textoflabelStaffSearch">Please have library staff pull the material off the shelves<span></label>
 
 								<label for="Purchase">
 								<input id="Purchase" type="radio" <#PARAM Name="SELECTED" Identifier="SupplyMethod" Value="Purchase"> name="SupplyMethod" value="Purchase" class="f-radio" />
@@ -175,13 +175,12 @@
         	$("#LoanPeriod").prop( "disabled", true );
         	$("#CallNumber").prop( "disabled", true );
         	$("#WillDeliver").prop( "disabled", true );
-        	$("#StaffSearch").prop( "disabled", true );
-        	$("#Purchase").prop("checked", true);
+        	$("#textoflabelStaffSearch").text("Title already in Library collection")
         } else {
         	$("#LoanPeriod").prop( "disabled", false );
         	$("#CallNumber").prop( "disabled", false );
         	$("#WillDeliver").prop( "disabled", false );
-        	$("#StaffSearch").prop( "disabled", false );
+        	$("#textoflabelStaffSearch").text("Please have library staff pull the material off the shelves");
         }
     });
 	</script>
