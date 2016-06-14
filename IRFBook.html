@@ -170,19 +170,25 @@
 	</div>
 	<script>
 	$("#BookOrEBook").change( function() {    
-        console.log($(this).val());
-        if ($(this).val() === "ebook") {
-        	$("#LoanPeriod").prop( "disabled", true );
-        	$("#CallNumber").prop( "disabled", true );
-        	$("#WillDeliver").prop( "disabled", true );
-        	$("#textoflabelStaffSearch").text("Title already in Library collection")
-        } else {
-        	$("#LoanPeriod").prop( "disabled", false );
-        	$("#CallNumber").prop( "disabled", false );
-        	$("#WillDeliver").prop( "disabled", false );
-        	$("#textoflabelStaffSearch").text("Please have library staff pull the material off the shelves");
-        }
-    });
+		if ($(this).val() === "ebook") {
+			$("#LoanPeriod").prop( "disabled", true );
+			$("#CallNumber").prop( "disabled", true );
+			$("#WillDeliver").prop( "disabled", true );
+			$("#textoflabelStaffSearch").text("Title already in Library collection")
+		} else {
+			$("#LoanPeriod").prop( "disabled", false );
+			$("#CallNumber").prop( "disabled", false );
+			$("#WillDeliver").prop( "disabled", false );
+			$("#textoflabelStaffSearch").text("Please have library staff pull the material off the shelves");
+		}
+	});
+	$("#CreateItem").submit( function() {    
+		if ($("#BookOrEBook").val() === "ebook") {
+			$("#Notes").val( function( index, val ) {
+				return val + " [ebook]";
+			});
+		} 
+	});
 	</script>
 </body>
 </html>
