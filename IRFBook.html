@@ -29,7 +29,7 @@
 
 						<label for="BookOrEBook">
 							<strong>
-								<span class="">Book or e-Book</span><br />
+								<span class="">Book or e-Book?</span><br />
 							</strong>
 							<select id="BookOrEBook" name="BookOrEBook">
 								<option value="book" selected="selected">Book</option>
@@ -174,9 +174,14 @@
         if ($(this).val() === "ebook") {
         	$("#LoanPeriod").prop( "disabled", true );
         	$("#CallNumber").prop( "disabled", true );
+        	$("#WillDeliver").prop( "disabled", true );
+        	$("#StaffSearch").prop( "disabled", true );
+        	$("#Purchase").prop("checked", true);
         } else {
         	$("#LoanPeriod").prop( "disabled", false );
         	$("#CallNumber").prop( "disabled", false );
+        	$("#WillDeliver").prop( "disabled", false );
+        	$("#StaffSearch").prop( "disabled", false );
         }
     });
 	</script>
