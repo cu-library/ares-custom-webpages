@@ -27,10 +27,6 @@
 						<legend class="offscreen">Reserve Item: Book</legend>
 						<span style="background-color:#E6F4FF ;font-size: 110%" tabindex="0"><#STATUS class="fade"></span>
 
-						<#OPTION name="PickupLocation" selectedValue="<#CUSTOMIZATION name='DefaultPickupSite'>" headerText="<label for='PickupLocation'><strong><span class='<#VALIDATION name=ERRORPickupLocation>'>Pickup Location for Physical Items</span></strong>" footerText="<br /></label>" onChange="getNewLoanPeriods(document.getElementById('PickupLocation').value);">
-
-						<div id="LoanPeriodDiv"><#OPTION name="LoanPeriod" isSharedListItem="False" SitePeriods="True" headerText="<label for='LoanPeriod'><#ERROR Name='ERRORLoanPeriod'><strong><span class='<#VALIDATION name='ERRORLoanPeriod'>'>Loan Period for Physical Items</span></strong>" footerText="<br /></label>"></div>
-
 						<label for="BookOrEBook">
 							<strong>
 								<span class="">Book or e-Book</span><br />
@@ -40,6 +36,10 @@
 								<option value="ebook">e-Book</option>
 							</select>
 						</label>
+
+						<#OPTION name="PickupLocation" selectedValue="<#CUSTOMIZATION name='DefaultPickupSite'>" headerText="<label for='PickupLocation'><strong><span class='<#VALIDATION name=ERRORPickupLocation>'>Pickup Location for Physical Items</span></strong>" footerText="<br /></label>" onChange="getNewLoanPeriods(document.getElementById('PickupLocation').value);">
+
+						<div id="LoanPeriodDiv"><#OPTION name="LoanPeriod" isSharedListItem="False" SitePeriods="True" headerText="<label for='LoanPeriod'><#ERROR Name='ERRORLoanPeriod'><strong><span class='<#VALIDATION name='ERRORLoanPeriod'>'>Loan Period for Physical Items</span></strong>" footerText="<br /></label>"></div>
 
 						<label for="Title"><#ERROR Name="ERRORTitle">
 							<strong>
@@ -169,8 +169,16 @@
 		</div>
 	</div>
 	<script>
-		
-
+	$("#BookOrEBook").change( function() {    
+        console.log($(this).val());
+        if ($(this).val() === "ebook") {
+        	$("#LoanPeriod").prop( "disabled", true );
+        	$("#CallNumber").prop( "disabled", true );
+        } else {
+        	$("#LoanPeriod").prop( "disabled", false );
+        	$("#CallNumber").prop( "disabled", false );
+        }
+    });
 	</script>
 </body>
 </html>
