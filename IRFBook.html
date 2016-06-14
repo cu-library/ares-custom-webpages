@@ -1,7 +1,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html lang="en-US" xmlns="http://www.w3.org/1999/xhtml">
 <head>
-	<title>Ares - Reserve Book</title>
+	<title>Ares - Reserve Book/e-Book</title>
 	<#INCLUDE filename="include_head.html">
 </head>
 <body id="type-b">
@@ -30,6 +30,16 @@
 						<#OPTION name="PickupLocation" selectedValue="<#CUSTOMIZATION name='DefaultPickupSite'>" headerText="<label for='PickupLocation'><strong><span class='<#VALIDATION name=ERRORPickupLocation>'>Pickup Location for Physical Items</span></strong>" footerText="<br /></label>" onChange="getNewLoanPeriods(document.getElementById('PickupLocation').value);">
 
 						<div id="LoanPeriodDiv"><#OPTION name="LoanPeriod" isSharedListItem="False" SitePeriods="True" headerText="<label for='LoanPeriod'><#ERROR Name='ERRORLoanPeriod'><strong><span class='<#VALIDATION name='ERRORLoanPeriod'>'>Loan Period for Physical Items</span></strong>" footerText="<br /></label>"></div>
+
+						<label for="BookOrEBook">
+							<strong>
+								<span class="">Book or e-Book</span><br />
+							</strong>
+							<select id="BookOrEBook" name="BookOrEBook">
+								<option value="book" selected="selected">Book</option>
+								<option value="ebook">e-Book</option>
+							</select>
+						</label>
 
 						<label for="Title"><#ERROR Name="ERRORTitle">
 							<strong>
@@ -158,5 +168,9 @@
 			</div>
 		</div>
 	</div>
+	<script>
+		
+
+	</script>
 </body>
 </html>
