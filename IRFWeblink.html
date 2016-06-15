@@ -28,6 +28,14 @@
 						<span style="background-color:#E6F4FF ;font-size: 110%" tabindex="0"><#STATUS class="fade"></span>
 						<h2 tabindex="0">Item Information</h2>
 						
+						<label for="URL"><#ERROR name="ERRORURL">
+							<strong>
+								<span class="req">*</span>
+								<span class="<#VALIDATION name="ERRORURL">">URL</span>
+							</strong>
+							<input id="URL" name="URL" type="text" size="40" class="f-name" value="<#PARAM name="URL">"><br />
+						</label>
+
 						<label for="Title"><#ERROR name="ERRORTitle">
 							<strong>
 								<span class="req">*</span>
@@ -68,14 +76,6 @@
 								<br/><span class="note">Comma separated list of tags to be assigned to this Item</span>
 							</strong>
 							<textarea id="ItemTags" name="ItemTags" rows="4"><#PARAM name="ItemTags"/></textarea><br /><br />
-						</label>
-
-						<label for="URL"><#ERROR name="ERRORURL">
-							<strong>
-								<span class="req">*</span>
-								<span class="<#VALIDATION name="ERRORURL">">URL</span>
-							</strong>
-							<input id="URL" name="URL" type="text" size="40" class="f-name" value="<#PARAM name="URL">"><br />
 						</label>
 
 						<#TABLE class="instructor-table" name="CourseItemRestrictions" courseChoice="one" headerText="Reserve Restrictions" IncludeJavascriptCalendar="Yes" calendarText="<img src='images/cal.gif' alt='Open Calendar'/>"/>
