@@ -141,28 +141,24 @@
 							</strong>
 							<fieldset>		
 								<legend class="offscreen">Supply method</legend>							
+								<label for="WebLink">
+								<input id="WebLink" type="radio" <#PARAM Name="SELECTED" Identifier="SupplyMethod" Value="WebLink"> name="SupplyMethod" value="WebLink" class="f-radio" />
+								Please link to this article</label>
+
+								<label for="WillDeliver">
+								<input id="WillDeliver" type="radio" <#PARAM Name="SELECTED" Identifier="SupplyMethod" Value="WillDeliver"> name="SupplyMethod" value="WillDeliver" class="f-radio" />
+								I will bring the material to the library to be scanned</label>
+								
 								<label for="File">
 								<input id="File" type="radio" checked="checked" <#PARAM Name="SELECTED" Identifier="SupplyMethod" Value="File"> name="SupplyMethod" value="File" class="f-radio" />
 								I will upload a file</label>
 								
-								<label for="WillDeliver">
-								<input id="WillDeliver" type="radio" <#PARAM Name="SELECTED" Identifier="SupplyMethod" Value="WillDeliver"> name="SupplyMethod" value="WillDeliver" class="f-radio" />
-								I will bring the material to the library</label>
-							
-								<label for="StaffSearch">
-								<input id="StaffSearch" type="radio" <#PARAM Name="SELECTED" Identifier="SupplyMethod" Value="StaffSearch"> name="SupplyMethod" value="StaffSearch" class="f-radio" />
-								Please have library staff pull the material off the shelves</label>
-								
-								<label for="WebLink">
-								<input id="WebLink" type="radio" <#PARAM Name="SELECTED" Identifier="SupplyMethod" Value="WebLink"> name="SupplyMethod" value="WebLink" class="f-radio" />
-								The item should link to a website
-								</label>
 							</fieldset>
 						</label>	
 
 						<label for="URL"><#ERROR name="ERRORURL">
 							<strong>
-								<span class="<#VALIDATION name="ERRORURL">">If you chose the item should link to a website above, please enter the URL</span>
+								<span class="<#VALIDATION name="ERRORURL">">Article URL</span>
 							</strong>
 							<input id="URL" name="URL" type="text" size="40" class="f-name" value="<#PARAM name="URL">"><br />
 						</label>
