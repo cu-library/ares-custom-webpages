@@ -33,7 +33,7 @@
 							</strong>
 							<select id="BookOrEBook" name="BookOrEBook">
 								<option value="book" selected="selected">Book</option>
-								<option value="ebook">e-Book</option>
+								<option value="eBook">e-Book</option>
 							</select>
 						</label>
 
@@ -170,7 +170,7 @@
 	</div>
 	<script>
 	$("#BookOrEBook").change( function() {    
-		if ($(this).val() === "ebook") {
+		if ($(this).val() === "eBook") {
 			$("#LoanPeriod").prop("disabled", true);
 			$("#CallNumber").prop("disabled", true);
 			$("#WillDeliver").prop("disabled", true);
@@ -184,9 +184,9 @@
 		}
 	});
 	$("#CreateItem").submit( function() {    
-		if ($("#BookOrEBook").val() === "ebook") {
+		if ($("#BookOrEBook").val() === "eBook") {
 			$("#Notes").val( function(index, val) {
-				return val + " [ebook]";
+				return val + " [e-Book]";
 			});
 		} 
 	});
