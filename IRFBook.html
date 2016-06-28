@@ -29,7 +29,7 @@
 
 						<label for="BookOrEBook">
 							<strong>
-								<span class="">Book or e-Book?</span><br />
+								<span class="">Preferred format: Book or e-Book?</span><br />
 							</strong>
 							<select id="BookOrEBook" name="BookOrEBook">
 								<option value="book" selected="selected">Book</option>
@@ -173,14 +173,16 @@
 		if ($(this).val() === "eBook") {
 			$("#LoanPeriod").prop("disabled", true);
 			$("#CallNumber").prop("disabled", true);
-			$("#WillDeliver").prop("disabled", true);
+            $("#WillDeliver").parent().toggle();
 			$("#textoflabelStaffSearch").text("Title already in Library collection");
 			$("#StaffSearch").prop("checked", true);
+            $("input[name=format]").val("e-Book");
 		} else {
 			$("#LoanPeriod").prop("disabled", false);
 			$("#CallNumber").prop("disabled", false);
-			$("#WillDeliver").prop("disabled", false);
+            $("#WillDeliver").parent().toggle();
 			$("#textoflabelStaffSearch").text("Please have library staff pull the material off the shelves");
+            $("input[name=format]").val("Book");
 		}
 	});
 	$("#CreateItem").submit( function() {    
@@ -190,6 +192,6 @@
 			});
 		} 
 	});
-	</script>
+	<#INCLUDE filename="include_summonintegration.html">
 </body>
 </html>
