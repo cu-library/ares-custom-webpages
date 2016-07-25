@@ -43,5 +43,24 @@ var sessionid = '<#PARAM Name="SessionID">';
 	</div>
 	
 </div>
+<script>
+window.onload = function() {
+  var footer = document.getElementById("footer");
+  var sidebar = document.getElementById("sidebar");
+  var content = document.getElementById("content");
+  
+  var sidebarHeight = sidebar.clientHeight;
+  var contentHeight = content.clientHeight;
+  
+  if (sidebarHeight > contentHeight) {
+    var heightDiff = sidebarHeight - contentHeight;
+    footer.setAttribute('style', 'padding-top:'+ heightDiff +'px;');
+  }
+  
+  
+  
+  
+};
+</script>
 </body>
 </html>
