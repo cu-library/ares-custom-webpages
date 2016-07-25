@@ -105,3 +105,9 @@ body {
     margin: 1rem 0px 1rem 0px;
 }
 
+/* Course Details Item Table */
+
+table.dataTable thead th, table.dataTable thead td {
+    padding: 6px 6px;
+}
+
