@@ -1,0 +1,36 @@
+<script type="text/javascript">
+    function fnOpenNormalDialog() {
+        $('#dialog-confirm-delete-shared-list-item').html('Would you like to delete the course items that are associated with this shared list item? If not, the course items will not be deleted but their link with this shared list item will be removed.');
+
+        var url = '<#ACTION action="22" type="16" ValueType="Lookup" Value="ListItemID">';
+
+        // Define the Dialog and its properties.
+        $('#dialog-confirm-delete-shared-list-item').dialog({
+            resizable: false,
+            modal: true,
+            title: 'Delete Course Items?',
+            height: 250,
+            width: 400,
+            buttons: {
+                'Yes': function () {
+                    $(this).dialog('close');
+                    url = url + '&DeleteCourseItems=True';
+                    window.location = url;
+                },
+                'No': function () {
+                    $(this).dialog('close');
+                    window.location = url;
+                },
+                'Cancel': function () {
+                    $(this).dialog('close');
+                }
+            }
+        });
+
+        return false;
+    }
+
+    $(document).ready(function () {
+        $('#delete-shared-list-item').bind('click', fnOpenNormalDialog);
+    })
+</script>

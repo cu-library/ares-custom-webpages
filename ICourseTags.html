@@ -1,0 +1,44 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en-US" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Ares - Course <#COURSE field="CourseNumber"/> Tags</title>
+<#INCLUDE filename="include_head.html">
+<script>
+var sessionid = '<#PARAM name="SessionID"/>';
+</script>
+
+</head>
+<body id="type-b">
+<div id="wrap"> <#INCLUDE filename="include_header.html">
+
+    <div id="content-wrap"> 
+		
+		<#INCLUDE filename="include_instructorcoursemenu.html" restriction="Usertype:CourseInstructor">
+		<#INCLUDE filename="include_instructorcoursemenu.html" restriction="Usertype:CourseFullProxy">
+		<#INCLUDE filename="include_courseproxycoursemenu.html" restriction="Usertype:CourseProxy">
+
+
+        <div id="content" role="main" tabindex="-1"> 
+		<h1 class="offscreen">Course <#COURSE field="CourseNumber"/> Tags</h1>
+		<span style="background-color:#E6F4FF ;font-size: 110%"><#STATUS class="fade"/></span>
+		
+            <div class="instructor">
+			<#INCLUDE filename="include_defaultcourseinfo.html"/>
+			<div class="row"><p class="note">Email subscriptions allow you to receive an email notification when a new item becomes available in this course.<br/>
+				<#SUBSCRIBE notSubscribedText="You are currently <span class='error'>not</span> subscribed. " subscribedText="You are currently subscribed. " subscribeLink="Subscribe Now" unsubscribeLink="Please remove my subscription"/>
+			</p></div>				
+            </div>
+
+	    <#TAGCLOUD TagType="Course" MaxFontSizes="5" IncludeTagCount="Yes" TagFence="No" /><br/><br/>
+
+	 Current Filter: <#PARAM name="Tag" /> | <a href="<#ACTION action="10" form="60" ValueType="Lookup" Value="CourseID">">View all Items for <#COURSE field="CourseNumber" /></a>	
+         <#TABLE class="instructor-table filterTable" name="Item" type="CourseItems" headerText="Reserve Items" LinkType="ItemInfo" LinkColumn="BothTitles" column="BothTitles:Title" column="Author:Author" column="inactiveDate:Inactive" column="CurrentStatus:Status" column="UserViewed" column="Tags:Tags" UnreadItem="<img src='images/new.gif' alt='New Item'/>" ReadItem="<img src='images/itemviewed.gif' alt='PreviouslyViewed'/>" NoDataAction="ShowMessage" NoDataMessage="There are no items in this course." allowsort="true">
+
+            <div id="footer" role="contentinfo">
+              <p><#COPYRIGHT></p>
+              <#INCLUDE filename="include_footer.html"> </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

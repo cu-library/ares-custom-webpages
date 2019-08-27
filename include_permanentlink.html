@@ -1,0 +1,23 @@
+<span class="instructor-table-nohover">
+<table class="instructor-table-nohover">
+	<caption>Permanent Link</caption>
+	<tbody>
+		<tr class="row-message"><td>
+			<img id="d_clip_button" data-clipboard-target="clipboard_target" aria-hidden="true" title="Click to copy" src="images/paste_16x16.gif" />
+			<span id="clipboard_target"><a href="<#ITEM field='PermanentLinkURL'>"><#ITEM field="PermanentLinkURL"></a></span>
+			<script type="text/javascript" src="js/ZeroClipboard/ZeroClipboard.min.js"></script>
+		    <script language="JavaScript">
+		        $(document).ready(function () {
+		            var clip = new ZeroClipboard($("#d_clip_button"), {
+		                moviePath: "js/ZeroClipboard/ZeroClipboard.swf"
+		            });
+
+		            clip.on('noflash', function (client) {
+		                $("#d_clip_button").hide();
+		            });
+		        });
+    		    </script>
+		</td></tr>
+	</tbody>
+</table>
+</span>

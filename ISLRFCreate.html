@@ -1,0 +1,87 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en-US" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title>Ares - Create Shared List Item</title>
+	<#INCLUDE filename="include_head.html">
+	<script type="text/javascript" src="js/ckeditor/ckeditor.js"></script>
+	<script type="text/javascript">
+		<!--
+		function focusIframeOnTab(caller, tabTargetId, callEvent)
+		{
+			// If keypress TAB and not SHIFT+TAB
+
+			if(callEvent.keyCode == 9 && !callEvent.shiftKey)
+				document.getElementById(tabTargetId).contentWindow.focus();
+		}
+			// -->
+	</script>
+	<script>
+		var sessionid = '<#PARAM Name="SessionID">';
+	</script>
+</head>
+<body id="type-b">
+	<div id="wrap">
+		<#INCLUDE filename="include_header.html">
+		<div id="content-wrap">
+			<#INCLUDE filename="include_instructorsharedlistmenu.html" restriction="Usertype:SharedListInstructor">
+			<#INCLUDE filename="include_fullproxysharedlistmenu.html" restriction="Usertype:SharedListFullProxy">
+			<div id="content" role="main" tabindex="-1">
+				<form action="ares.dll" method="post" name="CreateSharedListItem" id="CreateSharedListItem" class="f-wrap-request">
+					<input type="hidden" name="Action" value="11">
+					<input type="hidden" name="SharedListID" value="<#SHAREDLIST field="ListID"/>"/>
+					<input type="hidden" name="Type" value="16">		
+					<input type="hidden" name="CopyrightRequired" value="No"/>									
+					<input type="hidden" name="format" value="Create" />
+					<input type="hidden" name="SessionID" value="<#PARAM name="SessionID">">
+					<input type="hidden" name="SupplyMethod" value="Create" />
+
+					<div class="req" tabindex="0"><strong>*</strong> Indicates required field</div>
+					<fieldset>
+						<h1 tabindex="0">Shared List Reserve Item: Free Text</h1>
+						<legend class="offscreen">Shared List Reserve Item: Free Text</legend>
+						<span class="status-line" tabindex="0"><#STATUS class="fade"></span>
+						<h2 tabindex="0">Item Information</h2>
+					
+						<label for="Title"><#ERROR name="ERRORTitle">
+							<strong>
+								<span class="req">*</span><span class="<#VALIDATION name="ERRORTitle">">Title</span>
+							</strong>
+							<input id="Title" name="Title" type="text" size="40" class="f-name" value="<#PARAM name="Title">"><br />
+						</label>
+
+						<label for="Author"><#ERROR name="ERRORAuthor">
+							<strong>
+								<span class="req">*</span><span class="<#VALIDATION name="ERRORAuthor">">Author</span><br/>
+								<span class="note">(Last Name, First Name)</span>
+							</strong>
+							<input id="Author" name="Author" type="text" size="40" class="f-name" value="<#PARAM name="Author">" onKeyDown="focusIframeOnTab(this,'ItemText___Frame', event);if(!document.all) return false;"><br />
+						</label>
+
+						<label for="ItemText"><#ERROR name="ERRORItemContent">
+							<strong>
+								<span class="<#VALIDATION name="ItemText">" tabindex="0">Item Text</span><br />
+								<span class="note" tabindex="0">Create the item's content in the free text area below.</span>
+							</strong>
+						</label>
+						
+						<label>
+							<textarea id="ItemText" name="ItemText" rows="15" cols="80"><#PARAM name="ItemText"></textarea><br />
+							<script>
+								CKEDITOR.replace( 'ItemText' );
+							</script>	
+						</label>
+
+						<input class="f-submit" type="submit" name="SubmitButton" value="Submit Item" />
+						<input class="f-submit" type="reset" name="ClearButton" value="Clear" />								
+
+					</fieldset>
+				</form>			
+				<div id="footer" role="contentinfo">
+					<p><#COPYRIGHT></p>
+					<#INCLUDE filename="include_footer.html">
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

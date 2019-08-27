@@ -1,0 +1,150 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en-US" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title>Ares - Clone Course</title>
+	<#INCLUDE filename="include_head.html">
+	<script>
+		var sessionid = '<#PARAM Name="SessionID">';
+	</script>
+</head>
+<body id="type-b">
+	<div id="wrap">
+		<#INCLUDE filename="include_header.html">
+		<div id="content-wrap">
+			<#INCLUDE filename="include_instructorcoursemenu.html" restriction="Usertype:CourseInstructor">
+			<#INCLUDE filename="include_instructorcoursemenu.html" restriction="Usertype:CourseFullProxy">
+			<#INCLUDE filename="include_courseproxycoursemenu.html" restriction="Usertype:CourseProxy">
+			<div id="content" role="main" tabindex="-1">
+				<h1 class="offscreen">Clone Course</h1>
+				<form action="ares.dll" method="post" name="CreateCourse" class="f-wrap-request">
+					<input type="hidden" name="Action" value="11">
+					<input type="hidden" name="Form" value="114">
+					<input type="hidden" name="OldCourseID" value="<#COURSE field="CourseID"/><#PARAM name="OldCourseID"/>"/>
+					<input type="hidden" name="value" value="<#PARAM name="value"/>"/>
+					<input type="hidden" name="SessionID" value="<#PARAM name="SessionID">">
+					<input type="hidden" name="IncludeXListInfo" value="On">
+
+					<div class="req" tabindex="0"><strong>*</strong> Indicates required field</div>
+					<fieldset>
+						<h2 tabindex="0">Clone course: <#COURSE field="Name"/></h2>
+						<legend class="offscreen">Clone course: <#COURSE field="Name"/></legend>
+
+						<span style="background-color:#E6F4FF ;font-size: 110%" tabindex="0"><#STATUS class="fade"></span>
+						<h3 tabindex="0">New Course</h3>
+						<p tabindex="0">Please enter the new course code and semester when you will teach this course again. Choose which items you would like to be on reserves again and we'll take care of everything else.</p>
+			<!--
+						<label for="ExternalCourseId"><#ERROR name="ERRORExternalCourseId">
+							<strong>
+								<span class="<#Validation name="ERRORExternalCourseId">">External Course Id</span>
+							</strong>
+							<input id="ExternalCourseId" name="ExternalCourseId" type="text" size="20" class="f-name" value="<#PARAM name="ExternalCourseID"/>"><br />
+						</label>
+			-->
+						<label for="CourseName"><#ERROR name="ERRORCourseName">
+							<strong>
+								<span class="req">*</span>
+								<span class="<#Validation name="ERRORCourseName">">Course Name</span>
+							</strong>
+							<input type="text" class="f-name" id="CourseName" name="CourseName" value="<#PARAM name=CourseName>" size="40" /><br />
+						</label>
+
+						<label for="CourseNumber"><#ERROR name="ERRORCourseNumber">
+							<strong>
+								<span class="req">*</span>
+								<span class="<#Validation name="ERRORCourseNumber">">Course Number</span>
+							</strong>
+							<input id="CourseNumber" name="CourseNumber" type="text" size="40" class="f-name" value="<#PARAM name="coursenumber">" /><br />
+						</label>
+
+						<label for="CourseCode"><#ERROR name="ERRORCourseCode">
+							<strong>
+								<span class="<#Validation name="ERRORCourseCode">">Course Code</span>
+							</strong>
+							<input id="CourseCode" name="CourseCode" type="text" size="40" class="f-name" value="<#PARAM name="CourseCode">" /><br />
+						</label>
+
+						<label for="CourseInstructor"><#ERROR name="ERRORCourseInstructor">
+							<strong>
+								<span class="req">*</span>
+								<span class="<#Validation name="ERRORCourseInstructor">">Instructor</span>
+							</strong>
+							<input id="CourseInstructor" name="CourseInstructor" type="text" size="40" class="f-name" value="<#PARAM name="CourseInstructor">" /><br />
+						</label>
+
+						<label for="Department"><#ERROR name="ERRORDepartment">
+							<strong>
+								<span class="req">*</span>
+								<span class="<#VALIDATION name="ERRORDepartment">">Department</span>
+							</strong>
+							<#OPTION name="Custom" GroupName="Department" SelectedValue="<#PARAM name=department>" Size="1"><br/>
+						</label>
+
+						<label for="Semester"><#ERROR name="ERRORCourseSemester">
+							<strong>
+								<span class="req">*</span>
+								<span class="<#VALIDATION name="ERRORCourseSemester">">Course Semester</span><br/>
+								<span class="note">Choose the semester when you will be teaching this course again</span>
+							</strong>
+							<#OPTION name="Semester" class="f-name" onChange="GetSemesterStartStop(document.getElementById('Semester').value);"/><br/>
+						</label>
+
+						<label for="CourseURL"><#ERROR name="ERRORCourseURL">
+							<strong>
+								<span class="<#VALIDATION name="ERRORCourseURL">">Course URL</span>
+							</strong>
+							<input id="CourseURL" name="CourseURL" type="text" size="20" class="f-name" value="<#PARAM name="CourseURL">"/><br />
+						</label>
+
+						<label for="CourseDescription"><#ERROR name="ERRORCourseDescription">
+							<strong>
+								<span class="<#VALIDATION name="ERRORDepartment">">Course Description</span>
+							</strong>
+							<input name="CourseDescription" id="CourseDescription" type="text" size="20" class="f-name" value="<#PARAM name="CourseDescription"/>"/><br />
+						</label>
+
+						<label for="CoursePassword"><#ERROR name="ERRORCoursePassword">
+							<strong>
+								<span class="<#VALIDATION name="ERRORCoursePassword">">Course Password</span><br/>
+								<span class="note">If you do not want a password for this course, leave the field blank.</span>
+							</strong>
+							<input id="CoursePassword" name="CoursePassword" type="text" size="20" class="f-name" value="<#PARAM name="CoursePassword">"/><br />
+						</label>
+
+						<label for='PickupLocation'><#ERROR name="ERRORPickupLocation">
+							<#OPTION name="PickupLocation" selectedValue="<COURSE field="DefaultPickupSite" />" headerText="<strong><span class='<#VALIDATION name=ERRORPickupLocation>'>Default Pickup Location for Physical Items</span></strong>">
+						<br /></label>
+
+						<label for="CloneItemTags"><#ERROR name="ERRORCloneItemTags">
+							<strong>
+								<span class="<#VALIDATION name="ERRORCloneItemTags">">Clone Item Tags</span><br/>
+								</strong>
+							<input type="checkbox" id="CloneItemTags" name="CloneItemTags" class="f-checkbox" /><br />
+						</label>
+
+						<div>
+							<a href="#" aria-label="Uncheck all of the rows in the table below." onclick="ToggleCheckboxes(false, 'CloneItems'); return false;">Uncheck All</a> <span aria-hidden="true">|</span> <a href="#" aria-label="Check all of the rows in the table below." onclick="ToggleCheckboxes(true, 'CloneItems'); return false;">Check All</a><span class="<#CONDITIONAL test='CourseHasSharedList' false='hidden'>"> <span aria-hidden="true">|</span> <a href="#" aria-label="Uncheck all of the rows in the table below that were created from a shared list item." onclick="ToggleCheckboxes(false, 'CloneItems', 'sharedlistitem'); return false;">Uncheck All Created From Shared List</a></span><br/>
+						</div>
+						<#TABLE id="CloneItems" class="instructor-table-nohover" name="CloneItems" headerText="Reserve Materials to Clone" IncludeSharedListRelationship="Conditionally" IncludeJavascriptCalendar="Yes"  calendarText="<img src='images/cal.gif' alt='Open Calendar'/>"/>
+
+						<div>
+							<a href="#" aria-label="Uncheck all of the rows in the table below." onclick="ToggleCheckboxes(false, 'CloneInstructors'); return false;">Uncheck All</a> <span aria-hidden="true">|</span> <a href="#" aria-label="Check all of the rows in the table below." onclick="ToggleCheckboxes(true, 'CloneInstructors'); return false;">Check All</a><br/>
+						</div>
+						<#TABLE id="CloneInstructors" class="instructor-table-nohover" name="CloneInstructors" headerText="Proxy Instructors to Clone"  />
+
+						<input class="f-submit" type="submit" name="SubmitButton" value="Clone Course" />
+						<input class="f-submit" type="reset" name="ClearButton" value="Clear" />
+						
+					</fieldset>
+				</form>
+				<div id="footer" role="contentinfo">
+					<p><#COPYRIGHT></p>
+					<#INCLUDE filename="include_footer.html">
+				</div>
+			</div>
+		</div>
+	</div>
+<script language="javascript">
+	GetSemesterStartStop(document.getElementById('Semester').value);
+</script>
+</body>
+</html>
