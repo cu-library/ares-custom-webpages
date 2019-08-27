@@ -8,7 +8,7 @@
 	</script>
 </head>
 <body id="type-b">
-	<div id="wrap"> <#INCLUDE filename="include_header.html"> 
+	<div id="wrap"> <#INCLUDE filename="include_header.html">
 	  <div id="content-wrap">
 			<#INCLUDE filename="include_instructorsharedlistmenu.html" restriction="Usertype:SharedListInstructor">
 			<#INCLUDE filename="include_fullproxysharedlistmenu.html" restriction="Usertype:SharedListFullProxy">
@@ -21,7 +21,7 @@
 							<img src="images/large/docs_32.gif" height="32" width="32" alt="Article" title="Article"/><br/><span aria-hidden="true">Article</span>
 						</a>
 					</span>
-					
+
 					<span class="irf-menu-item-icon">
 						<a href="<#ACTION action="10" form="2" value="ISLRFBookChapter">&SharedListID=<#SHAREDLIST field="ListID">">
 							<img src="images/large/hist_32.gif" height="32" width="32" alt="Chapter" title="Chapter"/><br/><span aria-hidden="true">Chapter</span>
@@ -63,10 +63,11 @@
 
 				<h2>Or would you like to import from a current or previously taught course?</h2>
 
-				<#TABLE name="Course" class="instructor-table filterTable" Type="ImportToSharedList" headerText="Current and Previous Courses" LimitRecentMonths="2" Session="PreviousOrCurrent" Role="Instructor"  column="Semester:Semester" column="CourseNumber:Course" column="CourseCode:Course Code" column="Name:Name" column="ReserveItems:Reserve Items" NoDataAction="ShowMessage" NoDataMessage="No courses found." orderby="C.StopDate DESC,C.CourseNumber ASC">		
-				
+				<#TABLE name="Course" class="instructor-table filterTable" Type="ImportToSharedList" headerText="Current and Previous Courses" LimitRecentMonths="2" Session="PreviousOrCurrent" Role="Instructor"  column="Semester:Semester" column="CourseNumber:Course" column="CourseCode:Section" column="Name:Name" column="ReserveItems:Reserve Items" NoDataAction="ShowMessage" NoDataMessage="No courses found." orderby="C.StopDate DESC,C.CourseNumber ASC">
+
+
 				</div>
-				
+
 				<div id="footer" role="contentinfo">
 					<p><#COPYRIGHT></p>
 					<#INCLUDE filename="include_footer.html">

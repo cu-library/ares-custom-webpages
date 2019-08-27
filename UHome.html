@@ -19,15 +19,16 @@ var sessionid = '<#PARAM Name="SessionID">';
 		<div id="content" role="main" tabindex="-1">
 			<h1>Main Menu</h1>
 			<span style="background-color:#E6F4FF ;font-size: 110%" tabindex="0"><#STATUS class="fade"></span>
+			<br />
 			<form name="UserHome" method="post" action="ares.dll">
 			<input type="hidden" name="action" value="20" />
  			<input type="hidden" name="SessionID" value="<#PARAM name="SessionID"/>"/>
 
 			<#TABLE name="Item" class="student-table filterTable" headerText="My <#CUSTOMIZATION name='HotListName'>" LinkType="ItemInformation" LinkColumn="BothTitlesIcon" column="BothTitlesIcon:Title" column="Author:Author" column="Department:Department" column="CourseNumber:Course" HotList="Yes" hotListAdd="False" hotListAddText="Add checked items to <#CUSTOMIZATION name='HotListName'>" hotListDelete="True" hotListDeleteText="Remove checked items from <#CUSTOMIZATION name='HotListName'>" ONLYHotListItems="Yes" NoDataAction="ShowNothing">
 
-			<#TABLE name="Course" id="SearchResults" class="student-table filterTable" headerText="My Courses" LinkColumn="CourseNumber" Session="Current" Role="Student" column="CourseNumber:Course" column="CourseCode:Course Code" column="Name:Name" column="ItemCount:Reserve Items" NoDataAction="ShowMessage" NoDataMessage="You currently are not registered for any courses in the Ares system.<br/>To add courses to your account, <a href='<#Action action=10 form=63>'>Search Courses</a>">
+			<#TABLE name="Course" id="SearchResults" class="student-table filterTable" headerText="My Courses" LinkColumn="CourseNumber" Session="Current" Role="Student" column="CourseNumber:Course" column="CourseCode:Section" column="Name:Name" column="ItemCount:Reserve Items" NoDataAction="ShowMessage" NoDataMessage="You currently are not registered for any courses in the Ares system.<br/>To add courses to your account, <a href='<#Action action=10 form=63>'>Search Courses</a>">
 
-		    	<#TAGCLOUD name="Course" MaxFontSizes="5" IncludeTagCount="Yes" TagFence="No" TagType="Personal" headerText="<h2>My Tags</h2>" footerText="<br />" /><br/>
+			<#TAGCLOUD name="Course" MaxFontSizes="5" IncludeTagCount="Yes" TagFence="No" TagType="Personal" headerText="<h2>My Tags</h2>" footerText="<br />" /><br/>
 			</form>
 			<div id="footer" role="contentinfo">
 			<p><#COPYRIGHT></p>
@@ -39,5 +40,20 @@ var sessionid = '<#PARAM Name="SessionID">';
 	</div>
 
 </div>
+<script>
+window.onload = function() {
+  var footer = document.getElementById("footer");
+  var sidebar = document.getElementById("sidebar");
+  var content = document.getElementById("content");
+
+  var sidebarHeight = sidebar.clientHeight;
+  var contentHeight = content.clientHeight;
+
+  if (sidebarHeight > contentHeight) {
+    var heightDiff = sidebarHeight - contentHeight;
+    footer.setAttribute('style', 'padding-top:'+ heightDiff +'px;');
+  }
+};
+</script>
 </body>
 </html>

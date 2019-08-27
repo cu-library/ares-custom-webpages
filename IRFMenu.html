@@ -36,7 +36,7 @@
 					<span style="float:left; text-align: center; margin: 5px; padding: 20px;">
 						<a href="<#ACTION action="10" form="2" value="IRFBook">&CourseID=<#COURSE field="CourseID">">
 						<img src="images/large/book03.gif" height="32" width="32" alt="Book" title="Book"/><br/>
-						<span aria-hidden="true">Book</span></a>
+						<span aria-hidden="true">Book / e-Book</span></a>
 					</span>
 
 					<span style="float:left; text-align: center; margin: 5px; padding: 20px;">
@@ -46,6 +46,12 @@
 					</span>
 
 					<span style="float:left; text-align: center; margin: 5px; padding: 20px;">
+						<a href="<#ACTION action="10" form="2" value="IRFWeblink">&CourseID=<#COURSE field="CourseID">">
+						<img src="images/large/url.png" height="32" width="32" alt="Website Link" title="Website Link"/><br/>
+						<span aria-hidden="true">Website Link</span></a>
+					</span>
+
+					<!--<span style="float:left; text-align: center; margin: 5px; padding: 20px;">
 						<a href="<#ACTION action="10" form="22" valuetype="Lookup" value="Course">">
 						<img src="images/large/notep_32.gif" height="32" width="32" alt="Create Reserve material on-the-fly" title="Create Reserve material on-the-fly"/><br/>
 						<span aria-hidden="true">Free Text</span></a>
@@ -61,15 +67,17 @@
 						<a href="<#ACTION action="10" form="2" value="IRFVideo">&CourseID=<#COURSE field="CourseID">">
 						<img src="images/large/video_32.gif" height="32" width="32" alt="Video" title="Video"/><br/>
 						<span aria-hidden="true">Video</span></a>
-					</span>
+					</span>-->
 				</div>
+
+				<!--
 
 				<br/>
 
 				<div style="clear: both;">
 					<h2>Or would you like to import from a current or previously taught course?</h2>
 
-					<#TABLE name="Course" class="instructor-table filterTable" Type="Import" headerText="Current and Previous Courses" LimitRecentMonths="2" Session="PreviousOrCurrent" Role="Instructor"  column="Semester:Semester" column="CourseNumber:Course" column="CourseCode:Course Code" column="Name:Name" column="ReserveItems:Reserve Items" NoDataAction="ShowMessage" NoDataMessage="No courses found." orderby="C.StopDate DESC,C.CourseNumber ASC">
+					<#TABLE name="Course" class="instructor-table filterTable" Type="Import" headerText="Current and Previous Courses" LimitRecentMonths="2" Session="PreviousOrCurrent" Role="Instructor"  column="Semester:Semester" column="CourseNumber:Course" column="CourseCode:Section" column="Name:Name" column="ReserveItems:Reserve Items" NoDataAction="ShowMessage" NoDataMessage="No courses found." orderby="C.StopDate DESC,C.CourseNumber ASC">
 
 					<h2>Or would you like to apply a shared list to this course?</h2>
 
@@ -77,6 +85,7 @@
 
 					<#TABLE name="SharedList" class="instructor-table filterTable" Type="Import" headerText="Department Shared Lists" LinkColumn="ListID" ListType="Department" column="ListID:List ID" column="ListName:List Name" column="ListReference:Department" NoDataAction="ShowMessage" NoDataMessage="No Shared Lists found.">
 				</div>
+				-->
 
 				<div id="footer" role="contentinfo">
 					<p><#COPYRIGHT></p>

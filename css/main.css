@@ -21,7 +21,7 @@ margin-left: -1px;
 background-color: #DDD;
 cursor: pointer;
 }
-a.nav-link, a.nav-link:link, a.nav-link:visited, a.nav-link:active {	
+a.nav-link, a.nav-link:link, a.nav-link:visited, a.nav-link:active {
 color: #000;
 text-decoration: none;
 font-size: 14px;
@@ -73,9 +73,9 @@ Version: 010306
 body {padding: 0 0 20px;color:#333;font:83%/1.5 arial,tahoma,verdana,sans-serif}
 
 /* LINKS */
-a,a:link,a:link,a:link,a:hover {background:transparent;text-decoration:none;color:#666666;cursor:pointer} 
-a:link, a:visited {color:#666666} 
-a:hover,a:active {color:#069} 
+a,a:link,a:link,a:link,a:hover {background:transparent;text-decoration:none;color:#666666;cursor:pointer}
+a:link, a:visited {color:#666666}
+a:hover,a:active {color:#069}
 
 /* FORMS */
 input {font-family: arial,tahoma,verdana,sans-serif;margin: 2px 0}
@@ -85,20 +85,20 @@ label br {clear:left}
 
 	/* FORMS - general classes */
 	input.f-submit, button.f-submit {padding: 1px 3px;background:#666;color:#fff;font-weight:bold;font-size:96%}
-	
+
 	/* FORMS - f-wrap-1 - simple form, headings on left, form elements on right */
 	form.f-wrap-1 {width:100%;padding: .5em 0;background: #f6f6f6;border-top: 1px solid #d7d7d7;position:relative}
 		form.f-wrap-1 fieldset {width:auto;margin: 0 1em}
 		form.f-wrap-1 h3 {margin:0 0 .6em;font: bold 155% arial;color:#c00}
 		form.f-wrap-1 label {clear:left;float:left;width:100%;border-top: 1px solid #fff}
-		
+
 		/* hide from IE mac \*/
 		form.f-wrap-1 label {float:none}
 		/* end hiding from IE5 mac */
-	
+
 		form.f-wrap-1 label input, form.f-wrap-1 label select {width:15em;float:left;margin-left:10px}
 		form.f-wrap-1 label textarea, #cke_message {width:80%;float:left;margin-left:10px}
-		
+
 		form.f-wrap-1 label strong {float:left;width:8em;line-height: 1.7;display:block;position:relative}
 		form.f-wrap-1 label strong .req {color:#c00;font-size:150%;font-weight:normal;position:absolute;top:-.1em;line-height:1em;left:-.4em;width:.3em;height:.3em}
 		form.f-wrap-1 div.req {color:#666;font-size:96%;font-weight:normal;position:absolute;top:.4em;right:.4em;left:auto;width:13em;text-align:right}
@@ -107,13 +107,13 @@ label br {clear:left}
 		form.f-wrap-1 label textarea.f-comments {width: 20em}
 		form.f-wrap-1 div.f-submit-wrap {padding: 5px 0 5px 8em; clear: left;}
 		form.f-wrap-1 input.f-submit {margin: 0 0 0 10px}
-		
+
 		form.f-wrap-1 fieldset.f-checkbox-wrap, form.f-wrap-1 fieldset.f-radio-wrap {float:left;width:32em;border:none;margin:0;padding-bottom:.7em}
 		form.f-wrap-1 fieldset.f-checkbox-wrap strong, form.f-wrap-1 fieldset.f-radio-wrap strong {float:left;width:8em;line-height: 1.7;display:block;position:relative;padding-top:.3em}
 		form.f-wrap-1 fieldset.f-checkbox-wrap fieldset, form.f-wrap-1 fieldset.f-radio-wrap fieldset {float:left;width:13em;margin: 3px 0 0 10px}
 		form.f-wrap-1 fieldset.f-checkbox-wrap label, form.f-wrap-1 fieldset.f-radio-wrap label {float:left;width:13em;border:none;margin:0;padding:2px 0;margin-right:-3px}
 		form.f-wrap-1 label input.f-checkbox, form.f-wrap-1 label input.f-radio {width:auto;float:none;margin:0;padding:0}
-		
+
 		form.f-wrap-1 label span.errormsg {position:absolute;top:0;right:-10em;left:auto;display:block;width:16em;background: transparent url(../images/errormsg_bg.gif) no-repeat 0 0}
 		form.f-wrap-1 label span.errormsg strong {padding: 10px 0;margin: 0 10px 0 30px;color:#B30800;font-weight:bold;display:block;width:auto;float:none;line-height:1.3}
 
@@ -122,13 +122,13 @@ label br {clear:left}
 		form.f-wrap-2 fieldset {width:auto;margin: 0 1em}
 		form.f-wrap-2 h3 {margin:0 0 .6em;font: bold 155% arial;color:#c00}
 		form.f-wrap-2 label {clear:left;float:left;width:100%;border-top: 1px solid #fff}
-		
+
 		/* hide from IE mac \*/
 		form.f-wrap-2 label {float:none}
 		/* end hiding from IE5 mac */
-	
+
 		form.f-wrap-2 label input, form.f-wrap-2 label textarea, form.f-wrap-2 label select {float:left;margin-left:10px}
-		
+
 		form.f-wrap-2 label strong {float:left;line-height: 1.7;display:block;position:relative}
 		form.f-wrap-2 label strong .req {color:#c00;font-size:150%;font-weight:normal;position:absolute;top:-.1em;line-height:1;left:-.4em;width:.3em;height:.3em}
 		form.f-wrap-2 div.req {color:#666;font-size:96%;font-weight:normal;position:absolute;top:.4em;right:.4em;left:auto;width:13em;text-align:right}
@@ -137,7 +137,7 @@ label br {clear:left}
 		form.f-wrap-2 label textarea.f-comments {width: 20em}
 		form.f-wrap-2 div.f-submit-wrap {padding: 5px 0 5px 8em}
 		form.f-wrap-2 input.f-submit {margin: 0 0 0 10px}
-		
+
 		form.f-wrap-2 fieldset.f-checkbox-wrap, form.f-wrap-2 fieldset.f-radio-wrap {clear:left;float:left;width:32em;border:none;margin:0;padding-bottom:.7em}
 		form.f-wrap-2 fieldset.f-checkbox-wrap strong, form.f-wrap-2 fieldset.f-radio-wrap strong {float:left;width:8em;line-height: 1.7;display:block;position:relative;padding-top:.3em}
 		form.f-wrap-2 fieldset.f-checkbox-wrap fieldset, form.f-wrap-2 fieldset.f-radio-wrap fieldset {float:left;margin: 3px 0 0 10px}
@@ -151,15 +151,15 @@ label br {clear:left}
 	form.f-wrap-request {width:100%;padding: .5em 0;background: #f6f6f6;border-top: 1px solid #d7d7d7;position:relative}
 		form.f-wrap-request fieldset {width:auto;margin: 0 1em}
 		form.f-wrap-request h3 {margin:0 0 .6em;font: bold arial;color:#c00}
-		form.f-wrap-request h2, fieldset legend {margin:.6em 0 .6em;font: bold arial;color:#000066}
+		form.f-wrap-request h2, fieldset legend {margin:.6em 0 .6em;font: bold arial;color:#575757}
 		form.f-wrap-request label {clear:left;float:left;width:100%;border-bottom: 1px solid #fff}
-		
+
 		/* hide from IE mac \*/
 		form.f-wrap-request label {float:none}
 		/* end hiding from IE5 mac */
-	
+
 		form.f-wrap-request label input, form.f-wrap-request label textarea, form.f-wrap-request label select {width:35%;float:left;margin-left:10px}
-		
+
 		form.f-wrap-request label strong {float:left;width:60%;line-height: 1.7;display:block;position:relative}
 		form.f-wrap-request label strong .note {color:#333333;font-size:80%;font-weight:normal}
 		form.f-wrap-request label strong .req {color:#c00;font-size:150%;font-weight:normal;position:absolute;top:-.1em;line-height:1em;left:-.4em;width:.3em;height:.3em}
@@ -169,29 +169,29 @@ label br {clear:left}
 		form.f-wrap-request label textarea.f-comments {width: 20em}
 		form.f-wrap-request div.f-submit-wrap {padding: 5px 0 5px 8em}
 		form.f-wrap-request input.f-submit, button.f-submit {margin: 0 0 0 10px}
-		
+
 		form.f-wrap-request fieldset.f-checkbox-wrap, form.f-wrap-request fieldset.f-radio-wrap {float:left;width:32em;border:none;margin:0;padding-bottom:.7em}
 		form.f-wrap-request fieldset.f-checkbox-wrap strong, form.f-wrap-request fieldset.f-radio-wrap strong {float:left;width:8em;line-height: 1.7;display:block;position:relative;padding-top:.3em}
 		form.f-wrap-request fieldset.f-checkbox-wrap fieldset, form.f-wrap-request fieldset.f-radio-wrap fieldset {float:left;width:13em;margin: 3px 0 0 10px}
 		form.f-wrap-request fieldset.f-checkbox-wrap label, form.f-wrap-request fieldset.f-radio-wrap label {float:left;width:13em;border:none;margin:0;padding:2px 0;margin-right:-3px}
 		form.f-wrap-request label input.f-checkbox, form.f-wrap-request label input.f-radio {width:auto;float:none;margin:0;padding:0}
-		
+
 		form.f-wrap-request label span.errormsg {position:absolute;top:0;right:-10em;left:auto;display:block;width:16em;background: transparent url(../images/errormsg_bg.gif) no-repeat 0 0}
 		form.f-wrap-request label span.errormsg strong {padding: 10px 0;margin: 0 10px 0 30px;color:#B30800;font-weight:bold;display:block;width:auto;float:none;line-height:1.3}
-		
+
 /* FORMS - f-wrap-detail - simple form, headings on left, form elements on right */
 	form.f-wrap-detail {width:100%;padding: .5em 0;background: #f6f6f6;border-top: 1px solid #d7d7d7;position:relative}
 		form.f-wrap-detail fieldset {width:auto;margin: 0 1em}
 		form.f-wrap-detail h3 {margin:0 0 .6em;font: bold arial;color:#c00}
-		form.f-wrap-detail h2, fieldset legend {margin:.6em 0 .6em;font: bold arial;color:#000066}
+		form.f-wrap-detail h2, fieldset legend {margin:.6em 0 .6em;font: bold arial;color:#575757}
 		form.f-wrap-detail label {clear:left;float:left;width:100%;border-bottom: 1px solid #fff}
-		
+
 		/* hide from IE mac \*/
 		form.f-wrap-detail label {float:none}
 		/* end hiding from IE5 mac */
-	
+
 		form.f-wrap-detail label input, form.f-wrap-detail label textarea, form.f-wrap-detail label select {width:35%;float:left;margin-left:10px}
-		
+
 		form.f-wrap-detail label strong {float:left;width:60%;line-height: 1.7;display:block;position:relative}
 		form.f-wrap-detail label strong .note {color:#333333;font-size:80%;font-weight:normal}
 		form.f-wrap-detail label strong .req {color:#c00;font-size:150%;font-weight:normal;position:absolute;top:-.1em;line-height:1em;left:-.4em;width:.3em;height:.3em}
@@ -201,13 +201,13 @@ label br {clear:left}
 		form.f-wrap-detail label textarea.f-comments {width: 20em}
 		form.f-wrap-detail div.f-submit-wrap {padding: 5px 0 5px 8em}
 		form.f-wrap-detail input.f-submit {margin: 0 0 0 10px}
-		
+
 		form.f-wrap-detail fieldset.f-checkbox-wrap, form.f-wrap-detail fieldset.f-radio-wrap {float:left;width:32em;border:none;margin:0;padding-bottom:.7em}
 		form.f-wrap-detail fieldset.f-checkbox-wrap strong, form.f-wrap-detail fieldset.f-radio-wrap strong {float:left;width:8em;line-height: 1.7;display:block;position:relative;padding-top:.3em}
 		form.f-wrap-detail fieldset.f-checkbox-wrap fieldset, form.f-wrap-detail fieldset.f-radio-wrap fieldset {float:left;width:13em;margin: 3px 0 0 10px}
 		form.f-wrap-detail fieldset.f-checkbox-wrap label, form.f-wrap-detail fieldset.f-radio-wrap label {float:left;width:13em;border:none;margin:0;padding:2px 0;margin-right:-3px}
 		form.f-wrap-detail label input.f-checkbox, form.f-wrap-detail label input.f-radio {width:auto;float:none;margin:0;padding:0}
-		
+
 		form.f-wrap-detail label span.errormsg {position:absolute;top:0;right:-10em;left:auto;display:block;width:16em;background: transparent url(../images/errormsg_bg.gif) no-repeat 0 0}
 		form.f-wrap-detail label span.errormsg strong {padding: 10px 0;margin: 0 10px 0 30px;color:#B30800;font-weight:bold;display:block;width:auto;float:none;line-height:1.3}
 
@@ -238,7 +238,7 @@ ol li {margin-left: 1.4em;padding-left: 0;background: none; list-style-type: dec
 li {line-height: 1.4em;padding-left: 15px;
 background-image: url(../images/bullet.gif);
 background-repeat: no-repeat;
-} 
+}
 li.doc {background-position: 3px -500px}
 ul.nomarker li {background:none;padding-left:0}
 
@@ -247,63 +247,63 @@ dt {font-weight:bold;margin-top: 1.3em}
 dl dl {margin: 0 0 1.5em 30px}
 
 /* GENERAL */
-img {border:none} 
+img {border:none}
 hr {margin: 1em 0;background:#f2f2f2;height:1px;color:#f2f2f2;border:none;clear:both}
-.clear {clear:both;position:relative;font-size:0px;height:0px;line-height:0px} 
+.clear {clear:both;position:relative;font-size:0px;height:0px;line-height:0px}
 
 /* LAYOUT - HEADER */
-#header {background-color: #efefef; border-left: 1px solid #CCCCCC;border-right: 1px solid #CCCCCC; border-top: 5px solid #000066;border-bottom: 5px solid #000066;margin: 0 0 25px;padding: 6px 0 0 2px}
+#header {background-color: #efefef; border-left: 1px solid #CCCCCC;border-right: 1px solid #CCCCCC; border-top: 5px solid #575757;border-bottom: 5px solid #575757;margin: 0 0 25px;padding: 6px 0 0 2px}
 
-	#header #site-name {font: 265% arial;letter-spacing: -.05em;margin:0px 0 0 40px;padding:3px;color:#000066;border:none}
-	#header #title-name {font: 265% arial;letter-spacing: -.05em;margin:0px 0 0 40px;padding:3px;color:#000066;border:none}
+	#header #site-name {font: 265% arial;letter-spacing: -.05em;margin:0px 0 0 40px;padding:3px;color:#575757;border:none}
+	#header #title-name {font: 265% arial;letter-spacing: -.05em;margin:0px 0 0 40px;padding:3px;color:#575757;border:none}
 	#header #title-name a {text-decoration: none; border:none}
 
 	#header #user-name {font: 100% ariel;margin:0px 0 0 0;padding:3px;color:#333333;border:none}
-	
+
 	/* NAV - top horizontal nav */
 	#nav, #nav ul {padding: 0;margin: 0;list-style: none}
 	#nav {font-weight:bold;height:2.5em;font: bold 125% arial;margin: 0 105px 0 20px}
 	#nav li {position:relative;background: #FFFFFF;float: left;width: auto;display:block;margin: 0;border-bottom: 0px solid #666; background: url("../images/atlasbox.gif")  no-repeat 100%; border-right:0px solid #252525;padding: 0 2px 2px 0}
 	#nav a, #nav a:link, #nav a:visited, #nav a:hover, #nav a:active {color: #002c5f; text-decoration:none;cursor:pointer;border-width: 1px 1px 1px 0px; border-color: #043767; display: block;padding: 4px 10px 2px}
 	#nav a:hover {color: #3088BD}
-	
-	#nav li ul {border-left: 1px solid #000066;background: #efefef url("../images/featurebox_bg.gif") no-repeat 100% 100%;width:18.8em;font-size:80%;margin-top:0px;position: absolute;font-weight:normal;left: -999em}
+
+	#nav li ul {border-left: 1px solid #575757;background: #efefef url("../images/featurebox_bg.gif") no-repeat 100% 100%;width:18.8em;font-size:80%;margin-top:0px;position: absolute;font-weight:normal;left: -999em}
 	#nav li:hover ul, #nav li.sfhover ul {left: 10px;z-index:99999}
-	
+
 	#nav li li {background:none;float:none;border:none;border: 1px solid #999;border-top:1px solid #fff;border-right:none;border-left:none;padding-left:0px}
 	#nav li li.last {border-bottom:none}
 	#nav li li a, #nav li li a:link, #nav li li a:visited, #nav li li a:hover {color:#002c5f;padding: 3px 10px 2px;width:17em}
 	#nav li li a:hover {color:#3088BD;font-weight: bold;}
-	
+
 	#nav li.active {background: #333399;border-bottom: 3px solid #333399}
 	#nav li.active ul {border:none;background: #c00 url("../images/featurebox2_bg.gif") no-repeat 100% 100%}
 	#nav li.active a:link, #nav li.active a:visited, #nav li.active a:hover, #nav li.active a:active {}
 	#nav li.active a:hover {color:#333FFF;font-weight: bold;}
-	
+
 	#nav li.active li {font-size: .8em; border:none;border-top: 1px solid #c15c5c;border-bottom: 1px solid #870000}
 	#nav li.active li.last {border-bottom: none}
 	#nav li.active li a:link, #nav li.active li a:visited, #nav li.active li a:hover, #nav li.active li a:active {color:#fff}
 	#nav li.active li a:hover {background: #666 url("../images/sprites.gif") repeat-x 0 99%;color:#333FFF;font-weight: bold;}
-	
+
 	#nav li.active li.active a:link, #nav li.active li.active a:visited, #nav li.active li.active a:hover, #nav li.active li.active a:active {color:#fff;font-weight:bold;background: #666 url("../images/sprites.gif") repeat-x 0 99%}
 
 
 	/* hide from IE mac */
 	#nav li {width:auto}
 	/* end hiding from IE5 mac */
-	
+
 	/* SEARCH */
-	#search {color:#000066;font-weight:bold;position:absolute;top:35px;right:10px}
+	#search {color:#575757;font-weight:bold;position:absolute;top:35px;right:10px}
 	#search form {margin:0}
-	#search input.f-criteria {width:8em;margin: 0 0 -1px;height:1.6em}	
+	#search input.f-criteria {width:8em;margin: 0 0 -1px;height:1.6em}
 	#search label {padding:5px 0 0;display:inline}
 	#search input.f-submit {width:auto;font-size:81%;margin:0 0 -.15em;height:1.95em}
 	#search #searchType input {margin: 0 0 -0.4em;height:1.2em}
 	#search #searchType label {font-weight:normal;font-size:0.8em;padding:0px 0 0 5px}
-		
+
 	/* POWERED BY - mollio logo in this case */
 	#poweredby {width:96px;height:63px;position:absolute;top:-102px;right:0}
-	
+
 	#skip-to-content {text-align: center}
 
 /* LAYOUT - main body of page */
@@ -316,27 +316,27 @@ hr {margin: 1em 0;background:#f2f2f2;height:1px;color:#f2f2f2;border:none;clear:
 	#content #breadcrumb {margin-top:-5px;font-size:93%;font-weight:bold}
 	#content #breadcrumb a:link, #content #breadcrumb a:visited {text-decoration:none}
 	#content #breadcrumb a:hover, #content #breadcrumb a:active {text-decoration:underline}
-	
+
 	.featurebox {color:#333;padding: 15px 20px 20px;border-top: 1px solid #d7d7d7;margin: 0 0 1.5em;background: #f6f6f6 url("../images/featurebox_bg.gif") no-repeat 100% 100%}
 	.featurebox p, .featurebox h1, .featurebox h2, .featurebox h3, .featurebox h4, .featurebox h5, .featurebox h6 {margin: 0 0 .3em;border-bottom: 1px solid #333399;color:#333399}
 	.featurebox p {border:none;margin: 0 0 0.5em;color:#444}
 	.featurebox a {font-weight:bold}
-	
+
 	.alertNone {color:#333;padding: 0px 20px 20px;border-top: 1px solid #d7d7d7;margin: 0 0 1.5em;background: #f6f6f6}
 	.alertNone p, .featurebox h1, .featurebox h2, .featurebox h3, .featurebox h4, .featurebox h5, .featurebox h6 {margin: 0 0 .3em;border-bottom: 1px solid #333399;color:#333399}
 	.alertNone p {border:none;margin: 0 0 0.5em;color:#444}
 	.alertNone a {font-weight:bold}
-	
+
 	.alertSystem {color:#333;padding: 0px 20px 20px;border-top: 1px solid #d7d7d7;margin: 0 0 1.5em;background: #f6f6f6}
 	.alertSystem p, .featurebox h1, .featurebox h2, .featurebox h3, .featurebox h4, .featurebox h5, .featurebox h6 {margin: 0 0 .3em;border-bottom: 1px solid #333399;color:#333399}
 	.alertSystem p {border:none;margin: 0 0 0.5em;color:#444}
 	.alertSystem a {font-weight:bold}
-	
+
 	.alertUser {color:#333;padding: 0px 20px 20px;border-top: 1px solid #d7d7d7;margin: 0 0 1.5em;background: #f6f6f6}
 	.alertUser p, .featurebox h1, .featurebox h2, .featurebox h3, .featurebox h4, .featurebox h5, .featurebox h6 {margin: 0 0 .3em;border-bottom: 1px solid #333399;color:#333399}
 	.alertUser p {border:none;margin: 0 0 0.5em;color:#444}
 	.alertUser a {font-weight:bold}
-	
+
 	.alertStatus {color:#333;padding: 0px 20px 20px;border-top: 1px solid #d7d7d7;margin: 0 0 1.5em;background: #f6f6f6}
 	.alertStatus p, .featurebox h1, .featurebox h2, .featurebox h3, .featurebox h4, .featurebox h5, .featurebox h6 {margin: 0 0 .3em;border-bottom: 1px solid #333399;color:#333399}
 	.alertStatus p {border:none;margin: 0 0 0.5em;color:#444}
@@ -346,10 +346,10 @@ hr {margin: 1em 0;background:#f2f2f2;height:1px;color:#f2f2f2;border:none;clear:
 	.alertDeliveryLocation p, .featurebox h1, .featurebox h2, .featurebox h3, .featurebox h4, .featurebox h5, .featurebox h6 {margin: 0 0 .3em;border-bottom: 1px solid #333399;color:#333399}
 	.alertDeliveryLocation p {border:none;margin: 0 0 0.5em;color:#444}
 	.alertDeliveryLocation a {font-weight:bold}
-	
+
 	.thumbnail {margin: 0 0 0 10px;position:relative;z-index:9999;border: 1px solid #eee;float:right;width:100px;padding:5px;background:#fff}
 	.thumbnail img {border: 1px solid #000}
-	
+
 	.pagination {background: #f2f2f2;color:#666;padding: 4px 2px 4px 7px;border: 1px solid #ddd;margin: 0 0 1.5em}
 	.pagination p {position:relative;text-align:right}
 	.pagination p a:link, .pagination p a:visited, .pagination p a:hover, .pagination p a:active {text-decoration:none;background:#fff;padding:2px 5px;border: 1px solid #ccc}
@@ -357,7 +357,7 @@ hr {margin: 1em 0;background:#f2f2f2;height:1px;color:#f2f2f2;border:none;clear:
 	.pagination p span {text-decoration:none;background:#fff;padding:2px 5px;border: 1px solid #ccc;color:#ccc}
 	.pagination * {margin:0}
 	.pagination h4 {margin-top:-1.45em;padding:0;border:none}
-	
+
 	#resultslist-wrap {margin: 0 0 1.5em;font-size:92%}
 	#resultslist-wrap dt, #resultslist-wrap dl {margin: 0}
 	#resultslist-wrap dt {font: bold 85% arial;padding: 3px 0}
@@ -366,13 +366,13 @@ hr {margin: 1em 0;background:#f2f2f2;height:1px;color:#f2f2f2;border:none;clear:
 	#resultslist-wrap li dl {margin:0}
 	#resultslist-wrap dd {line-height:1.3}
 	#resultslist-wrap dd.filetype, #resultslist-wrap dd.date {color:#999;display:inline;padding-right:.5em}
-	
+
 	#transactionMenu {border-top: 5px solid #999;border-bottom: 1px solid #ccc;margin-bottom:.5em;width:100%}
 	#transactionMenu a:link, #transactionMenu a:visited {color:#c00;font-weight:bold;line-height:2em;padding:.3em}
 	#transactionMenu a:hover, #transactionMenu a:active {background-color: #efefef}
 	#transactionMenu .separator {color:#ccc;margin-left:5px;margin-right:5px}
 	#transactionMenu .noActionMessage {color:#999;font-weight:normal;line-height:2em;padding:.3em}
-	
+
 	/* TABLES */
 	.table1 {border: 2px solid #900;border-collapse:collapse;width:100%}
 		.table1 td {background: #fff url("../images/sprites.gif") repeat-x 0 -1600px;padding:3px;border: 1px solid #fff}
@@ -388,12 +388,12 @@ hr {margin: 1em 0;background:#f2f2f2;height:1px;color:#f2f2f2;border:none;clear:
 		.calendar thead th {padding: 3px 2px}
 		.calendar tbody th {padding: 2px}
 		.calendar tbody th.sub {padding: 2px}
-		
+
 	/* 'MORE' LINK - provides an accessible alternative to just using 'more' as a link at the end of paragraphs */
 		a.morelink:link, a.morelink:visited, a.morelink:hover, a.morelink:active {background: transparent url("../images/sprites.gif") no-repeat 5px -500px;padding-left:21px}
 		a.morelink:hover {background: transparent url("../images/sprites.gif") 5px -400px}
 		.morelink span {position:absolute;left:-9999px;width:900px}
-		
+
 	/* CODE - formatting for code inserted into body - more here: http://dizque.lacalabaza.net/temp/lipt/ */
 		ol.code {font-family: monospace;position:relative}
 		ol.code li {color: #666;margin-bottom: 1px}
@@ -442,34 +442,34 @@ hr {margin: 1em 0;background:#f2f2f2;height:1px;color:#f2f2f2;border:none;clear:
 	#nav-secondary li.active li a, #nav-secondary li.active li a:link, #nav-secondary li.active li a:visited {line-height:1.3;background: #fff url("../images/sprites.gif") no-repeat 0 -798px;padding:0 0 0 12px;font-weight:normal;width:auto;color:#000;width:130px;display:block}
 	#nav-secondary li.active li a:hover, #nav-secondary li.active li a:active {color: #c00}
 	#nav-secondary li.active li {border: none;margin:0}
-	
-	#nav-secondary li.active li.active a:link, 
-	#nav-secondary li.active li.active a:visited, 
-	#nav-secondary li.active li.active a:hover, 
+
+	#nav-secondary li.active li.active a:link,
+	#nav-secondary li.active li.active a:visited,
+	#nav-secondary li.active li.active a:hover,
 	#nav-secondary li.active li.active a:active {font-weight:bold}
 
 /* SECONDARY NAVIGATION - 3rd TIER */
 	#nav-secondary ul ul {margin: 0 0 1em 13px;padding:0}
 	#nav-secondary li.active li.active li a, #nav-secondary li.active li.active li a:link, #nav-secondary li.active li.active li a:visited {width:117px}
-	#nav-secondary li.active li.active li a:link, 
-	#nav-secondary li.active li.active li a:visited, 
-	#nav-secondary li.active li.active li a:hover, 
+	#nav-secondary li.active li.active li a:link,
+	#nav-secondary li.active li.active li a:visited,
+	#nav-secondary li.active li.active li a:hover,
 	#nav-secondary li.active li.active li a:active {font-weight:normal}
-	#nav-secondary li.active li.active li.active a:link, 
-	#nav-secondary li.active li.active li.active a:visited, 
-	#nav-secondary li.active li.active li.active a:hover, 
+	#nav-secondary li.active li.active li.active a:link,
+	#nav-secondary li.active li.active li.active a:visited,
+	#nav-secondary li.active li.active li.active a:hover,
 	#nav-secondary li.active li.active li.active a:active {font-weight:bold}
 
 /* SECONDARY NAVIGATION - 4th TIER */
 	#nav-secondary ul ul ul {margin: 0 0 1em 13px;padding:0}
 	#nav-secondary li.active li.active li.active li a, #nav-secondary li.active li.active li.active li a:link, #nav-secondary li.active li.active li.active li a:visited {width:104px}
-	#nav-secondary li.active li.active li.active li a:link, 
-	#nav-secondary li.active li.active li.active li a:visited, 
-	#nav-secondary li.active li.active li.active li a:hover, 
+	#nav-secondary li.active li.active li.active li a:link,
+	#nav-secondary li.active li.active li.active li a:visited,
+	#nav-secondary li.active li.active li.active li a:hover,
 	#nav-secondary li.active li.active li.active li a:active {font-weight:normal}
-	#nav-secondary li.active li.active li.active li.active a:link, 
-	#nav-secondary li.active li.active li.active li.active a:visited, 
-	#nav-secondary li.active li.active li.active li.active a:hover, 
+	#nav-secondary li.active li.active li.active li.active a:link,
+	#nav-secondary li.active li.active li.active li.active a:visited,
+	#nav-secondary li.active li.active li.active li.active a:hover,
 	#nav-secondary li.active li.active li.active li.active a:active {font-weight:bold}
 
 /* LAYOUT - FOOTER */
@@ -485,13 +485,13 @@ hr {margin: 1em 0;background:#f2f2f2;height:1px;color:#f2f2f2;border:none;clear:
 		.table1 thead th {color:#CC3300;font-size:145%;padding: 10px 6px}
 		.table1 tbody th {color:#fff;font-size:115%;background: #88b8db url("../images/sprites.gif") repeat-x 0 -1400px;padding: 6px}
 		.table1 tbody th.sub {font-size:100%;color:#000;background: #efefef url("../images/sprites.gif") repeat-x 0 -1500px;padding: 6px}
-		
-.default-table {	
+
+.default-table {
 	width:100%
 }
 .default-table table {
 	border-collapse:collapse !important;
-	border: 1px solid #000066;
+	border: 1px solid #575757;
 	margin-bottom: 20px !important;
 	font: 75%/1.5em verdana, arial, geneva, sans-serif;
 }
@@ -500,7 +500,7 @@ font-size: 100%;
 letter-spacing: 0.05em;
 }
 .default-table tbody td, th {
-border-left: 1px solid #000066;
+border-left: 1px solid #575757;
 vertical-align: top;
 padding: 5px;
 }
@@ -509,11 +509,11 @@ background: #efefef;
 color:#000;
 }
 .default-table thead tr.row-header {
-background: #000066;
+background: #575757;
 color: #fff;
 }
 .default-table thead tr.row-headings {
-border-bottom: 1px solid #000066;
+border-bottom: 1px solid #575757;
 }
 .default-table thead th {
 padding: 5px 5px;
@@ -522,7 +522,7 @@ letter-spacing: 0.2em;
 font-weight: bold;
 font-size: 110%
 }
-.default-table tbody th { 
+.default-table tbody th {
 padding: 5px 5px 5px 5px;
 text-align: left;
 font-size: 110%;
@@ -530,25 +530,25 @@ color: #fff;
 letter-spacing: 0.1em;
 line-height: 1.5em;
 text-transform: uppercase;
-}	
+}
 .default-table tbody tr.row-odd th {
-background: #efefef; 
+background: #efefef;
 }
 .default-table tbody tr.row-odd {
-background: #efefef; 
+background: #efefef;
 }
 .default-table tbody tr.row-hover {
-background: #FFFACD; 
+background: #FFFACD;
 }
 
 .default-table tbody tr th {
-background: #ffffff; 
+background: #ffffff;
 }
 .default-table tbody tr {
-background: #ffffff; 
+background: #ffffff;
 }
 .default-table tfoot th, tfoot td {
-border-top: 1px solid #000066;
+border-top: 1px solid #575757;
 text-align: left;
 color: #000;
 }
@@ -566,12 +566,12 @@ font-size: 110%;
 }
 
 /* INSTRUCTOR TABLE */
-.instructor-table, .instructor-table-nohover {	
+.instructor-table, .instructor-table-nohover {
 	width:100%
 }
 .instructor-table table, .instructor-table-nohover table {
 	border-collapse:collapse !important;
-	border: 1px solid #000066;
+	border: 1px solid #575757;
 	font: 75%/1.5em verdana, arial, geneva, sans-serif;
 	margin-bottom: 20px !important;
 }
@@ -580,7 +580,7 @@ font-size: 100%;
 letter-spacing: 0.05em;
 }
 .instructor-table tbody td, th, .instructor-table-nohover tbody td, th {
-border-left: 1px solid #000066;
+border-left: 1px solid #575757;
 vertical-align: top;
 padding: 5px;
 }
@@ -589,11 +589,11 @@ background: #FFFACD;
 color:#000;
 }
 .instructor-table thead tr.row-header, .instructor-table-nohover thead tr.row-header {
-background: #000066;
+background: #575757;
 color: #fff;
 }
 .instructor-table thead tr.row-headings, .instructor-table-nohover thead tr.row-headings {
-border-bottom: 1px solid #000066;
+border-bottom: 1px solid #575757;
 }
 .instructor-table thead th, .instructor-table-nohover thead th {
 padding: 5px 5px;
@@ -608,7 +608,7 @@ font-size: 110%
 	color: #000000;
 }
 
-.instructor-table tbody th, .instructor-table-nohover tbody th { 
+.instructor-table tbody th, .instructor-table-nohover tbody th {
 padding: 5px 5px 5px 5px;
 text-align: left;
 font-size: 110%;
@@ -616,39 +616,39 @@ color: #fff;
 letter-spacing: 0.1em;
 line-height: 1.5em;
 text-transform: uppercase;
-}	
+}
 .instructor-table tbody tr.row-odd th, .instructor-table-nohover tbody tr.row-odd th {
-background: #FFFACD; 
+background: #FFFACD;
 }
 .instructor-table tbody tr.row-odd, .instructor-table-nohover tbody tr.row-odd {
-background: #FFFACD; 
+background: #FFFACD;
 }
 .instructor-table tbody tr.row-hover,.instructor-table tbody tr:hover {
-background: #E6E6FA; 
+background: #E6E6FA;
 cursor: pointer;
 }
 
 .instructor-table tbody tr th, .instructor-table-nohover tbody tr th {
-background: #ffffff; 
+background: #ffffff;
 }
 .instructor-table tbody tr, .instructor-table-nohover tbody tr {
-background: #ffffff; 
+background: #ffffff;
 }
 .instructor-table tfoot th, tfoot td, .instructor-table-nohover tfoot th, tfoot td {
-border-top: 1px solid #000066;
+border-top: 1px solid #575757;
 text-align: left;
 color: #000;
 }
 .instructor-table tfoot th, .instructor-table-nohover tfoot th {
 text-transform: uppercase;
 letter-spacing: 0.2em;
-border: 1px solid #000066;
+border: 1px solid #575757;
 }
 
 .instructor-table tfoot td, .instructor-table-nohover tfoot td {
 padding: 10px 0 10px 10px;
 font-size: 110%;
-border: 1px solid #000066;
+border: 1px solid #575757;
 }
 
 .instructor-table a, .instructor-table-nohover a {
@@ -656,7 +656,7 @@ border: 1px solid #000066;
 }
 
 table caption {
-background: #000066;
+background: #575757;
 color: #fff;
 padding: 5px;
 font-weight: bold;
@@ -669,16 +669,16 @@ text-align: left;
 
 /* INSTRUCTOR DIVS */
 
-.instructor 
+.instructor
 {
-	border: 1px solid #000066;
+	border: 1px solid #575757;
 	margin-bottom: 20px;
 	width: 100%;
 }
 
 .instructor .header {
 	color: #fff;
-	background: #000066;
+	background: #575757;
 	padding: 5px 5px;
 	text-align: left;
 	letter-spacing: 0.2em;
@@ -694,12 +694,12 @@ text-align: left;
 .instructor .rowline {
 	padding-left: 5px;
 	padding-right: 5px;
-	border-bottom: 1px solid #000066;
+	border-bottom: 1px solid #575757;
 	width: 99%;
 }
 
 
-.xlist-table {	
+.xlist-table {
 	width:100%
 }
 .xlist-table table {
@@ -742,7 +742,7 @@ font-size: 110%
 	color: #000000;
 }
 
-.xlist-table tbody th { 
+.xlist-table tbody th {
 padding: 5px 5px 5px 5px;
 text-align: left;
 font-size: 110%;
@@ -750,19 +750,19 @@ color: #fff;
 letter-spacing: 0.1em;
 line-height: 1.5em;
 text-transform: uppercase;
-}	
+}
 .xlist-table tbody tr.row-odd th {
-background: #FFF0F5; 
+background: #FFF0F5;
 }
 .xlist-table tbody tr.row-odd {
-background: #FFF0F5; 
+background: #FFF0F5;
 }
 
 .xlist-table tbody tr th {
-background: #FFF0F5; 
+background: #FFF0F5;
 }
 xlist-table tbody tr {
-background: #FFF0F5; 
+background: #FFF0F5;
 }
 .xlist-table tfoot th, tfoot td {
 border: 1px solid #8B0000;
@@ -787,12 +787,12 @@ font-size: 110%;
 
 
 /* STUDENT TABLE */
-.student-table, .student-table-nohover {	
+.student-table, .student-table-nohover {
 	width:100%
 }
 .student-table table, .student-table-nohover table {
 	border-collapse:collapse !important;
-	border: 1px solid #000066;
+	border: 1px solid #575757;
 	font: 75%/1.5em verdana, arial, geneva, sans-serif;
 	margin-bottom: 20px !important;
 }
@@ -801,7 +801,7 @@ font-size: 100%;
 letter-spacing: 0.05em;
 }
 .student-table tbody td, th, .student-table-nohover tbody td, th {
-border-left: 1px solid #000066;
+border-left: 1px solid #575757;
 vertical-align: top;
 padding: 5px;
 }
@@ -810,11 +810,11 @@ background: #EFEFEF;
 color:#000;
 }
 .student-table thead tr.row-header, .student-table-nohover thead tr.row-header {
-background: #000066;
+background: #575757;
 color: #fff;
 }
 .student-table thead tr.row-headings, .student-table-nohover thead tr.row-headings {
-border-bottom: 1px solid #000066;
+border-bottom: 1px solid #575757;
 }
 .student-table thead th, .student-table-nohover thead th {
 padding: 5px 5px;
@@ -829,7 +829,7 @@ font-size: 110%
 	color: #3300CC;
 }
 
-.student-table tbody th, .student-table-nohover tbody th { 
+.student-table tbody th, .student-table-nohover tbody th {
 padding: 5px 5px 5px 5px;
 text-align: left;
 font-size: 110%;
@@ -837,38 +837,38 @@ color: #fff;
 letter-spacing: 0.1em;
 line-height: 1.5em;
 text-transform: uppercase;
-}	
+}
 .student-table tbody tr.row-odd th, .student-table-nohover tbody tr.row-odd th {
-background: #EFEFEF; 
+background: #EFEFEF;
 }
 .student-table tbody tr.row-odd, .student-table-nohover tbody tr.row-odd {
-background: #EFEFEF; 
+background: #EFEFEF;
 }
 .student-table tbody tr.row-hover,.student-table tbody tr:hover {
-background: #FFFACD; 
+background: #FFFACD;
 cursor: pointer;
 }
 
 .student-table tbody tr th, .student-table-nohover tbody tr th {
-background: #ffffff; 
+background: #ffffff;
 }
 .student-table tbody tr, .student-table-nohover tbody tr {
-background: #ffffff; 
+background: #ffffff;
 }
 .student-table tfoot th, tfoot td, .student-table-nohover tfoot th, tfoot td {
-border: 1px solid #000066;
+border: 1px solid #575757;
 text-align: left;
 color: #000;
 }
 .student-table tfoot th, .student-table-nohover tfoot th {
 text-transform: uppercase;
 letter-spacing: 0.2em;
-border: 1px solid #000066;
+border: 1px solid #575757;
 }
 .student-table tfoot td, .student-table-nohover tfoot td {
 padding: 10px 0 10px 10px;
 font-size: 110%;
-border: 1px solid #000066;
+border: 1px solid #575757;
 }
 
 .student-table a, .student-table-nohover a {
@@ -877,7 +877,7 @@ border: 1px solid #000066;
 
 /* Student DIVS */
 .student {
-	border: 1px solid #000066;
+	border: 1px solid #575757;
 	float: left;
 	margin-right: 5px;
 	margin-bottom: 5px;
@@ -885,7 +885,7 @@ border: 1px solid #000066;
 }
 
 .student .header {
-	background: #000066;
+	background: #575757;
 	color: #fff;
 	padding-left: 5px;
 	width: 100%;
@@ -901,7 +901,7 @@ border: 1px solid #000066;
 .student .rowline {
 	padding-left: 5px;
 	padding-right: 5px;
-	border-bottom: 1px solid #000066;
+	border-bottom: 1px solid #575757;
 	width: 100%;
 }
 
@@ -913,7 +913,7 @@ line-height: 1.4em;
 padding-left: 0px;
 background-image: url(../images/bullet.gif);
 background-repeat: no-repeat;
-} 
+}
 
 #faq-contents {line-height:normal}
 
@@ -928,7 +928,7 @@ line-height: 1.4em;
 padding-left: 0px;
 background-image: url(../images/bullet.gif);
 background-repeat: no-repeat;
-} 
+}
 
 .ValidationError {font-weight:bold; color:#AC0000}
 
@@ -985,7 +985,7 @@ div.view-edit-delete {
 	top:auto;
 	width:1px;
 	height:1px;
-	overflow:hidden;	
+	overflow:hidden;
 }
 
 .item-import-course-details
@@ -997,16 +997,16 @@ div.view-edit-delete {
 
 .item-import-course-details span
 {
-	width: 50%; 
-	float: left; 
-	border: 1px solid rgb(0, 0, 102); 
+	width: 50%;
+	float: left;
+	border: 1px solid rgb(0, 0, 102);
 	border-collapse: collapse !important;
 }
 
 .item-import-course-details .course-details-heading
 {
-	background-color: rgb(0, 0, 102); 
-	color: #FFFFFF; 
+	background-color: rgb(0, 0, 102);
+	color: #FFFFFF;
 	font-weight: bold;
 }
 

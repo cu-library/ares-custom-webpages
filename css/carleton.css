@@ -1,0 +1,112 @@
+/* Typography */
+
+body {
+    font-family: 'Open Sans',arial,verdana,sans-serif;
+    color: black;
+}
+
+h1, h2, h3, h4, h5, h6, fieldset legend {
+    letter-spacing: normal;
+    font-family: 'Open Sans',arial,verdana,sans-serif;
+}
+
+/* Links */
+
+a {
+    color: #186d92;
+}
+a:link, a:visited {
+    color: #186d92;
+}
+a:hover,a:active,a:focus {
+    text-decoration: underline;
+    color: #186d92;
+}
+
+/* Backgrounds */
+
+body {
+    background: #E6E6E6;
+    padding: 0px;
+}
+
+#wrap {
+    background: white;
+    min-height: 495px;
+}
+
+#content-wrap {
+    margin-top: 1rem;
+}
+
+
+/* Header */
+
+#header {
+    border-top: 0px;
+    border-bottom: 5px solid #b9212c;
+    margin: 0px;
+}
+
+/* Search */
+
+#search {
+    color: inherit;
+}
+
+/* Skip Link */
+
+#skip-to-content {
+    height: 0px;
+    overflow: visible;
+}
+
+#skip-to-content a {
+    border: thin solid lightgray;
+    padding: 0.3rem 1rem;
+    background: white;
+    color: black;
+    font-size: 1.1rem;
+    position: absolute;
+    left: -10000px;
+}
+
+#skip-to-content a:active, #skip-to-content a:focus{
+    position: static;
+}
+
+/* Sidebar */
+
+#faq-contents .faq-item-box p, .featurebox h1, .featurebox h2, .featurebox h3, .featurebox h4, .featurebox h5, .featurebox h6 {
+    border-bottom: none;
+    color: black;
+}
+
+#nav-secondary {
+    border: none;
+}
+
+#sidebar {
+    border: none;
+}
+
+/* Footer */
+
+#footer {
+    font-size: inherit;
+    color: black;
+}
+
+#footer a, #footer a:link {
+    color: #186d92;
+}
+
+#areslogo {
+    margin: 1rem 0px 1rem 0px;
+}
+
+/* Course Details Item Table */
+
+table.dataTable thead th, table.dataTable thead td {
+    padding: 6px 6px;
+}

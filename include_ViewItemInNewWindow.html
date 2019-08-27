@@ -1,0 +1,13 @@
+<script src="//code.jquery.com/jquery-1.12.4.js"></script>
+<script>
+	if($) {
+		$(document).ready(function() {
+			$("div.table-action a").each(function() {
+				var _this = $(this);
+				if (_this.text() == "View\xa0Item") {
+					_this.attr("target", "_blank");
+				}
+			});
+		});
+	}
+</script>

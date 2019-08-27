@@ -1,7 +1,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html lang="en-US" xmlns="http://www.w3.org/1999/xhtml">
 <head>
-	<title>Ares - Reserve Book</title>
+	<title>Ares - Reserve Book/e-Book</title>
 	<#INCLUDE filename="include_head.html">
 </head>
 <body id="type-b">
@@ -27,7 +27,17 @@
 						<legend class="offscreen">Reserve Item: Book</legend>
 						<span style="background-color:#E6F4FF ;font-size: 110%" tabindex="0"><#STATUS class="fade"></span>
 
-						<#OPTION name="PickupLocation" selectedValue="<#CUSTOMIZATION name='DefaultPickupSite'>" headerText="<label for='PickupLocation'><strong><span class='<#VALIDATION name=ERRORPickupLocation>'>Pickup Location for Physical Items</span></strong>" footerText="<br /></label>">
+						<label for="BookOrEBook">
+							<strong>
+								<span class="">Preferred format: Book or e-Book?</span><br />
+							</strong>
+							<select id="BookOrEBook" name="BookOrEBook">
+								<option value="book" selected="selected">Book</option>
+								<option value="eBook">e-Book</option>
+							</select>
+						</label>
+
+						<#OPTION name="PickupLocation" selectedValue="<#CUSTOMIZATION name='DefaultPickupSite'>" headerText="<label for='PickupLocation'><strong><span class='<#VALIDATION name=ERRORPickupLocation>'>Pickup Location for Physical Items</span></strong>" footerText="<br /></label>" onChange="getNewLoanPeriods(document.getElementById('PickupLocation').value);">
 
 						<div id="LoanPeriodDiv"><#OPTION name="LoanPeriod" isSharedListItem="False" SitePeriods="True" headerText="<label for='LoanPeriod'><#ERROR Name='ERRORLoanPeriod'><strong><span class='<#VALIDATION name='ERRORLoanPeriod'>'>Loan Period for Physical Items</span></strong>" footerText="<br /></label>"></div>
 
@@ -128,7 +138,7 @@
 
 								<label for="StaffSearch">
 								<input id="StaffSearch" type="radio" <#PARAM Name="SELECTED" Identifier="SupplyMethod" Value="StaffSearch"> name="SupplyMethod" value="StaffSearch" class="f-radio" />
-								Please have library staff pull the material off the shelves</label>
+								<span id="textoflabelStaffSearch">Please have library staff pull the material off the shelves<span></label>
 
 								<label for="Purchase">
 								<input id="Purchase" type="radio" <#PARAM Name="SELECTED" Identifier="SupplyMethod" Value="Purchase"> name="SupplyMethod" value="Purchase" class="f-radio" />
@@ -158,5 +168,30 @@
 			</div>
 		</div>
 	</div>
+	<script>
+	$("#BookOrEBook").change( function() {
+		if ($(this).val() === "eBook") {
+			$("#LoanPeriod").prop("disabled", true);
+			$("#CallNumber").prop("disabled", true);
+			$("#WillDeliver").parent().toggle();
+			$("#textoflabelStaffSearch").text("Title already in Library collection");
+			$("#StaffSearch").prop("checked", true);
+			$("input[name=format]").val("e-Book");
+		} else {
+			$("#LoanPeriod").prop("disabled", false);
+			$("#CallNumber").prop("disabled", false);
+			$("#WillDeliver").parent().toggle();
+			$("#textoflabelStaffSearch").text("Please have library staff pull the material off the shelves");
+			$("input[name=format]").val("Book");
+		}
+	});
+	$("#CreateItem").submit( function() {
+		if ($("#BookOrEBook").val() === "eBook") {
+			$("#Notes").val( function(index, val) {
+				return val + " [e-Book]";
+			});
+		}
+	});
+	</script>
 </body>
 </html>
