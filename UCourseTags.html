@@ -26,7 +26,7 @@ var sessionid = '<#PARAM name="SessionID"/>';
 
 			<div class="instructor">
 				<div class="header">Course Details</div>
-				<div class="row"><#COURSE field="CourseNumber"/>&nbsp;<#COURSE field="Name"/><#COURSE field="CourseCode" headerText="&nbsp;(" footerText=")"/></div>
+				<div class="row"><#COURSE field="CourseNumber"/>&nbsp;<#COURSE field="Name"/><#COURSE field="CourseCode" headerText=" (" footerText=")"/></div>
 				<div class="row"><#TABLE class="xlist-table" name="CourseCrossList" HideColumnHeaders="True" column="CourseNumber" headerText="This course is also cross-listed as the following:" NoDataAction="ShowNothing"/></div>
 				<div class="row"><#COURSE field="Semester"/></div>
 				<div class="row"><#CONDITIONAL Type="NotEmpty" Test="<#COURSE field='URL'>" True="<a href='<#COURSE field='URL'>'><#COURSE field='URL'></a>"></div>

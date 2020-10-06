@@ -975,6 +975,10 @@ div.view-edit-delete {
     float: left;
 }
 
+.float-right {
+    float: right;
+}
+
 .hidden {
     display: none;
 }

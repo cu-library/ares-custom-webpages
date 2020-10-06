@@ -177,7 +177,7 @@ $(function() {
         $.ajax({
             method: 'GET',
             url: 'ares.dll',
-            data: { action: 70, type: 785, PickupLocation: pickupLocation },
+            data: { action: 70, type: 785, PickupLocation: pickupLocation, LoanPeriod: $("#LoanPeriod").val() },
             datatype: 'xml'
         })
         .done(function (data) {
