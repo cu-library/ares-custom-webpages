@@ -1,4 +1,4 @@
-﻿// Copyright (c) 2018 Atlas Systems, Inc.
+// Copyright (c) 2018 Atlas Systems, Inc.
 // Ares LTI Content Item functionality
 
 $(function () {

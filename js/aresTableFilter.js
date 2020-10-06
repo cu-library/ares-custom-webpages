@@ -1,4 +1,4 @@
-﻿// Copyright (c) 2015 Atlas Systems, Inc.
+// Copyright (c) 2015 Atlas Systems, Inc.
 // Ares DataTables for filtering grids
 // Using http://datatables.net functionality
 
