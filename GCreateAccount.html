@@ -1,6 +1,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html lang="en-US" xmlns="http://www.w3.org/1999/xhtml">
 <head>
+<meta data-name="ares_wpv" data-bn="20210428.1" data-bid="15789" data-cid="772fedcec03967af8ad988135391d5269e08cac8" />
 	<title>Ares - Create Account</title>
 	<#INCLUDE filename="include_head.html">
 </head>
@@ -128,7 +129,7 @@
 								<span class="req">*</span>
 								<span class="<#Validation name="ERRORPassword1">">Password</span>
 							</strong>
-							<input id="Password1" name="Password1" type="password" size="40" class="f-name" value="<#PARAM Name="Password1"/>"><br />
+							<input id="Password1" name="Password1" type="password" size="40" class="f-name" value="<#PARAM Name='Password1'>" autocomplete="off"><br />
 							<#ERROR Name="ERRORPassword1">
 						</label>
 
@@ -137,7 +138,7 @@
 								<span class="req">*</span>
 								<span class="<#Validation name="ERRORPassword2">">Confirm Password</span>
 							</strong>
-							<input id="Password2" name="Password2" type="password" size="40" class="f-name" value="<#PARAM Name="Password2"/>"><br />
+							<input id="Password2" name="Password2" type="password" size="40" class="f-name" value="<#PARAM Name='Password2'>" autocomplete="off"><br />
 							<#ERROR Name="ERRORPassword2">
 						</label>
 						

@@ -114,7 +114,14 @@ function GetName(Username) {
                 var firstName = $(user).find("firstname").text();
                 var lastName = $(user).find("lastname").text();
                 
-                $("#CourseInstructor").val(lastName + ', ' + firstName);
+				//The CourseInstructor element is no longer on the default pages, 
+				//but we're leaving this function here and are now checking for the 
+				//element's existence for backwards compatibility
+				var instructorInput = $("#CourseInstructor");
+				
+				if (instructorInput.length) {
+					instructorInput.val(lastName + ', ' + firstName);
+				}
             }
         }
     });
@@ -143,14 +150,8 @@ function checkUniqueUsername(Username) {
     });
 }
 
-$(function() {
-    // 
-    // Sets up state management for the getNewLoanPeriods function, then assigns the getNewLoanPeriods function.
-    // 
+function HideLoanPeriod() {
     
-    if ($('#PickupLocation').length <= 0) {
-        return;
-    }
 
     var _defaultLoanPeriodControl = $('<label for="LoanPeriod"><strong>Loan Period for Physical Items</strong><select name="LoanPeriod" id="LoanPeriod"></select><br></label>');
     var _loanPeriodControlSelect = $('');
@@ -164,60 +165,72 @@ $(function() {
         _loanPeriodControlSelect = _defaultLoanPeriodControl.clone();
     }
 
-    $('#PickupLocation').change(function (e) {
-        //
-        // GETs new loan periods from the Ares server based on the specified PickupLocation, then populates the #LoanPeriodDiv accordingly.
-        //     - 0 loan period options clears the LoanPeriodDiv
-        //     - 1 loan period option populates a hidden input tag
-        //     - Otherwise, a select tag is populated with the available options
-        //
+    //
+    // GETs new loan periods from the Ares server based on the specified PickupLocation, then populates the #LoanPeriodDiv accordingly.
+    //     - 0 loan period options clears the LoanPeriodDiv
+    //     - 1 loan period option populates a hidden input tag
+    //     - Otherwise, a select tag is populated with the available options
+    //
+    
+    pickupLocation = $(this).val();
+    
+    $.ajax({
+        method: 'GET',
+        url: 'ares.dll',
+        data: { action: 70, type: 785, PickupLocation: pickupLocation },
+        datatype: 'xml'
+    })
+    .done(function (data) {
+
+        var code = $(data).find('araj_code');
         
-        pickupLocation = $(this).val();
+        if (typeof code === 'undefined' || code.text() !== '0') {
+            return;
+        }
+
+        var newLoanPeriods = $(data).find('lp_options');
         
-        $.ajax({
-            method: 'GET',
-            url: 'ares.dll',
-            data: { action: 70, type: 785, PickupLocation: pickupLocation, LoanPeriod: $("#LoanPeriod").val() },
-            datatype: 'xml'
-        })
-        .done(function (data) {
+        if (typeof newLoanPeriods === 'undefined') {
+            return;
+        }
+                    
+        $('#LoanPeriodDiv').empty();
+        
+        var newLoanPeriodOptions = $.parseHTML(newLoanPeriods.text());
+        var enabledOptions = $(newLoanPeriodOptions).not(':disabled');
+        var loanPeriodControlTemplate;
 
-            var code = $(data).find('araj_code');
-            
-            if (typeof code === 'undefined' || code.text() !== '0') {
-                return;
-            }
+        if (enabledOptions.length == 0) {
+            loanPeriodControlTemplate = '';
+            ariaAlert('There are no loan period options for the selected pickup location. The field has been hidden.');
+        }
+        else if (enabledOptions.length == 1) {
+            loanPeriodControlTemplate = _loanPeriodControlHidden.clone();
+            loanPeriodControlTemplate.val(enabledOptions.first().val());
+            ariaAlert('The only loan period option for the selected pickup location is "' + enabledOptions.first().text() + '". The field has been hidden.');
+        }
+        else {
+            loanPeriodControlTemplate = _loanPeriodControlSelect.clone();
+            loanPeriodControlTemplate.find('#LoanPeriod').append(newLoanPeriodOptions);
+            ariaAlert('The loan periods have been updated for the selected pickup location.');
+        }
 
-            var newLoanPeriods = $(data).find('lp_options');
-            
-            if (typeof newLoanPeriods === 'undefined') {
-                return;
-            }
-                        
-            $('#LoanPeriodDiv').empty();
-            
-            var newLoanPeriodOptions = $.parseHTML(newLoanPeriods.text());
-            var enabledOptions = $(newLoanPeriodOptions).not(':disabled');
-            var loanPeriodControlTemplate;
-
-            if (enabledOptions.length == 0) {
-                loanPeriodControlTemplate = '';
-                ariaAlert('There are no loan period options for the selected pickup location. The field has been hidden.');
-            }
-            else if (enabledOptions.length == 1) {
-                loanPeriodControlTemplate = _loanPeriodControlHidden.clone();
-                loanPeriodControlTemplate.val(enabledOptions.first().val());
-                ariaAlert('The only loan period option for the selected pickup location is "' + enabledOptions.first().text() + '". The field has been hidden.');
-            }
-            else {
-                loanPeriodControlTemplate = _loanPeriodControlSelect.clone();
-                loanPeriodControlTemplate.find('#LoanPeriod').append(newLoanPeriodOptions);
-                ariaAlert('The loan periods have been updated for the selected pickup location.');
-            }
-
-            $('#LoanPeriodDiv').append(loanPeriodControlTemplate);    
-        });
+        $('#LoanPeriodDiv').append(loanPeriodControlTemplate);    
     });
+}
+
+$(function() {
+    // 
+    // Sets up state management for the getNewLoanPeriods function, then assigns the getNewLoanPeriods function.
+    // 
+    
+    if ($('#PickupLocation').length <= 0) {
+        return;
+    }
+
+    $(document).ready(HideLoanPeriod());
+
+    $('#PickupLocation').change(HideLoanPeriod());
 });
 
 function ResortItems(SessionId, ClassId, SortField) {

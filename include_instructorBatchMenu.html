@@ -7,14 +7,15 @@
             <label for="tagger">
 				<strong tabindex="0"><span class="req">*</span>Tag Type:</strong>
 				<fieldset>	
-					<legend class="offscreen">Tag Type</legend>
+                    <legend class="offscreen">Tag Type</legend>
+                    <input id="tagger" type="hidden" name="tagger" value="<#USER field=Username>" />
 					<label for="courseTagger">
-                        <input id="courseTagger" type="radio" class="f-radio" checked="checked" name="tagger" value="INSTRUCTOR" /> 
+                        <input id="courseTagger" type="radio" class="f-radio" checked="checked" name="tagType" value="Course" /> 
                         Instructor Tag
                     </label>
 						
                     <label for="personalTagger">
-			            <input id="personalTagger" type="radio" class="f-radio" name="tagger" value="<#USER field=Username>"/>
+			            <input id="personalTagger" type="radio" class="f-radio" name="tagType" value="User"/>
                         Personal Tag
                     </label>						
 					

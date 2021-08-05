@@ -3,6 +3,7 @@
 <head>
 <!--Added this to make the View Item link open items in a new window so that they'll open whether HTTPS or HTTP links, even when viewing in via the CMS -->
 <#INCLUDE filename="include_ViewItemInNewWindow.html">
+<meta data-name="ares_wpv" data-bn="20210428.1" data-bid="15789" data-cid="772fedcec03967af8ad988135391d5269e08cac8" />
 <title>Ares - Course <#COURSE field="CourseNumber"/> Tags</title>
 <#INCLUDE filename="include_head.html">
 <script>
@@ -26,7 +27,7 @@ var sessionid = '<#PARAM name="SessionID"/>';
 
 			<div class="instructor">
 				<div class="header">Course Details</div>
-				<div class="row"><#COURSE field="CourseNumber"/>&nbsp;<#COURSE field="Name"/><#COURSE field="CourseCode" headerText=" (" footerText=")"/></div>
+				<div class="row"><#COURSE field="CourseNumber"/>&nbsp;<#COURSE field="Name"/><#COURSE field="CourseCode" headerText="&nbsp;(" footerText=")"/></div>
 				<div class="row"><#TABLE class="xlist-table" name="CourseCrossList" HideColumnHeaders="True" column="CourseNumber" headerText="This course is also cross-listed as the following:" NoDataAction="ShowNothing"/></div>
 				<div class="row"><#COURSE field="Semester"/></div>
 				<div class="row"><#CONDITIONAL Type="NotEmpty" Test="<#COURSE field='URL'>" True="<a href='<#COURSE field='URL'>'><#COURSE field='URL'></a>"></div>

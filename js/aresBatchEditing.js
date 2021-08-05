@@ -180,7 +180,8 @@
             var baseAjaxUrl = $(this).attr('data-baseUrl');
 
             var tag = $('#batchForm').find('input[name=tag]').val();
-            var tagger = $('#batchForm').find('input[name=tagger]:checked').val();
+            var tagger = $('#batchForm').find('input[name=tagger]').val();
+            var tagType = $('#batchForm').find('input[name=tagType]:checked').val();
 
             var batchElement = $(this).attr('data-batchElement');
             if (!batchElement) {
@@ -211,7 +212,7 @@
                 $.ajax({
                     method: 'POST',
                     url: baseAjaxUrl,
-                    data: { Tag: tag, Tagger: tagger, Items: checkedItems },
+                    data: { Tag: tag, Tagger: tagger, TagType: tagType, Items: checkedItems },
                     datatype: 'xml',
                     cache: false
                 })

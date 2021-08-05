@@ -1,6 +1,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html lang="en-US" xmlns="http://www.w3.org/1999/xhtml">
 <head>
+<meta data-name="ares_wpv" data-bn="20210428.1" data-bid="15789" data-cid="772fedcec03967af8ad988135391d5269e08cac8" />
 <title>Ares - Course Search</title>
 <#INCLUDE filename="include_head.html">
 <script>
@@ -39,7 +40,7 @@ var sessionid = '<#PARAM Name="SessionID">';
 				<input type="hidden" name="Action" value="11"/>
             	<input type="hidden" name="Form" value="63"/>							
                 <input type="hidden" name="SessionID" value="<#PARAM name="SessionID">">
-				<#OPTION name="SearchInstructors" DefaultOptionText="Choose an Instructor &nbsp;"/>			
+				<input type="text" name="SearchInstructorNames" title="Course instructor search term"/>
 				<input type="submit" name="InstructorSearch" value="Go"/></form>
 			</div>
 			</div>
@@ -77,3 +78,4 @@ var sessionid = '<#PARAM Name="SessionID">';
 </div>
 </body>
 </html>
+

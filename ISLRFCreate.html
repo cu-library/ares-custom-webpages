@@ -1,9 +1,13 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html lang="en-US" xmlns="http://www.w3.org/1999/xhtml">
 <head>
+<meta data-name="ares_wpv" data-bn="20210428.1" data-bid="15789" data-cid="772fedcec03967af8ad988135391d5269e08cac8" />
 	<title>Ares - Create Shared List Item</title>
 	<#INCLUDE filename="include_head.html">
-	<script type="text/javascript" src="js/ckeditor/ckeditor.js"></script>
+	<link rel="stylesheet" type="text/css" href="css/pell.min.css">
+	<script type="text/javascript" src="js/showdown.min.js"></script>
+	<script type="text/javascript" src="js/pell.min.js"></script>
+	<script type="text/javascript" src="js/aresMarkdown.js"></script>	
 	<script type="text/javascript">
 		<!--
 		function focusIframeOnTab(caller, tabTargetId, callEvent)
@@ -66,9 +70,10 @@
 						
 						<label>
 							<textarea id="ItemText" name="ItemText" rows="15" cols="80"><#PARAM name="ItemText"></textarea><br />
+							<div id="editor" hidden="true"></div>
 							<script>
-								CKEDITOR.replace( 'ItemText' );
-							</script>	
+								InitializeEditor("ItemText");
+							</script>
 						</label>
 
 						<input class="f-submit" type="submit" name="SubmitButton" value="Submit Item" />
